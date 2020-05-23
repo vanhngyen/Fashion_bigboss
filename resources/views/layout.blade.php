@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 
@@ -37,3 +38,4 @@
 </section>
 </body>
 </html>
+
