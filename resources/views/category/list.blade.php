@@ -33,6 +33,7 @@
                             <th>Created at</th>
                             <th>Updated at</th>
                             <th></th>
+                            <th></th>
                         </tr>
                         </thead>
                         <tbody>
@@ -43,11 +44,13 @@
                                 <td>{{$category->__get("created_at")}}</td>
                                 <td>{{$category->__get("updated_at")}}</td>
                                 <td>
-                                    <a href="{{url("/edit-category/{$category->__get("id")}")}}" class="btn btn-outline-warning">Edit</a>
+                                    <a href="{{url("/edit-category/{$category->__get("id")}")}}" class="btn btn-warning">Edit</a>
+                                </td>
+                                <td>
                                     <form action="{{url("/delete-category/{$category->__get("id")}")}}" method="post">
                                         @method("DELETE")
                                         @csrf
-                                        <button type="submit" onclick="return confirm('Are you sure?');" class="btn btn-outline-danger">Delete</button>
+                                        <button type="submit" onclick="return confirm('Are you sure?');" class="btn btn-danger">Delete</button>
                                     </form>
                                 </td>
                             </tr>
