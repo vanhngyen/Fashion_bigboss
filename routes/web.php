@@ -15,3 +15,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get("/","WebController@index");
 
+
+//product
+Route::get("/list-product","AbcController@listProduct");
+Route::get("/new-product","AbcController@newProduct");
+Route::post("/save-product","AbcController@saveProduct");
