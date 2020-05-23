@@ -18,20 +18,21 @@
 <!-- Top Bar -->
 <x-nav/>
 <!-- #Top Bar -->
-
-<!-- Left Sidebar -->
-<x-leftSidebar/>
-<!-- #END# Left Sidebar -->
-<!-- Right Sidebar -->
-<x-rightBar/>
-<!-- #END# Right Sidebar -->
-
+<section>
+    <!-- Left Sidebar -->
+    <x-leftSidebar/>
+    <!-- #END# Left Sidebar -->
+    <!-- Right Sidebar -->
+   <x-rightBar/>
+    <!-- #END# Right Sidebar -->
+</section>
 
 <section class="content">
     <div class="container-fluid">
         <div class="block-header">
-            @yield("content")
+            <h2>DASHBOARD</h2>
         </div>
+        @yield("content")
     </div>
 </section>
 <x-scripts/>
