@@ -14,4 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get("/","WebController@index");
-
+//category
+Route::get("/list-category","CategoryController@listCategory");
+//Route::get("/new-category","CategoryController@newCategory");
+//Route::post("/save-category","CategoryController@saveCategory");
+//
