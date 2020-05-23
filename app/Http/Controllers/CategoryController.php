@@ -9,7 +9,7 @@ class CategoryController extends Controller
 {
     public function listCategory()
     {
-        $categories =Category::paginate(1);
+        $categories =Category::paginate(20);
         return view("category.list", [
             "categories" => $categories
         ]);

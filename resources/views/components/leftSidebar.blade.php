@@ -33,21 +33,9 @@
                 </a>
             </li>
             <li>
-                <a href="pages/typography.html">
-                    <i class="material-icons">text_fields</i>
-                    <span>Typography</span>
-                </a>
-            </li>
-            <li>
-                <a href="pages/helper-classes.html">
-                    <i class="material-icons">layers</i>
-                    <span>Helper Classes</span>
-                </a>
-            </li>
-            <li>
                 <a href="javascript:void(0);" class="menu-toggle">
                     <i class="material-icons">widgets</i>
-                    <span>Widgets</span>
+                    <span>Fashion</span>
                 </a>
                 <ul class="ml-menu">
                     <li>
@@ -56,10 +44,10 @@
                         </a>
                         <ul class="ml-menu">
                             <li>
-                                <a href="pages/widgets/cards/basic.html">Basic</a>
+                                <a href="{{url("/list-product")}}">Basic</a>
                             </li>
                             <li>
-                                <a href="pages/widgets/cards/colored.html">Colored</a>
+                                <a href="{{url("/list-product")}}">Colored</a>
                             </li>
                             <li>
                                 <a href="pages/widgets/cards/no-header.html">No Header</a>
