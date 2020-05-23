@@ -23,7 +23,7 @@
     <x-leftSidebar/>
     <!-- #END# Left Sidebar -->
     <!-- Right Sidebar -->
-   <x-rightSidebar/>
+   <x-rightBar/>
     <!-- #END# Right Sidebar -->
 </section>
 
