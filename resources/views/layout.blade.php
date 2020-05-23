@@ -35,7 +35,7 @@
         @yield("content")
     </div>
 </section>
-<x-scipts/>
+<x-scripts/>
 </body>
 </html>
 
