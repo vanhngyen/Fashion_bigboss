@@ -18,4 +18,8 @@ Route::get("/","WebController@index");
 Route::get("/list-category","CategoryController@listCategory");
 //Route::get("/new-category","CategoryController@newCategory");
 //Route::post("/save-category","CategoryController@saveCategory");
-//
+//=======
+//product
+Route::get("/list-product","AbcController@listProduct");
+Route::get("/new-product","AbcController@newProduct");
+Route::post("/save-product","AbcController@saveProduct");
