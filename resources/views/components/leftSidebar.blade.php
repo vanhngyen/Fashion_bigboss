@@ -27,7 +27,7 @@
         <ul class="list">
             <li class="header">MAIN NAVIGATION</li>
             <li class="active">
-                <a href="index.html">
+                <a href="{{"/"}}">
                     <i class="material-icons">home</i>
                     <span>Home</span>
                 </a>
@@ -40,39 +40,97 @@
                 <ul class="ml-menu">
                     <li>
                         <a href="javascript:void(0);" class="menu-toggle">
-                            <span>Cards</span>
+                            <span>Category</span>
                         </a>
                         <ul class="ml-menu">
                             <li>
-                                <a href="{{url("/list-product")}}">Basic</a>
+                                <a href="{{"/list-category"}}">List Category</a>
                             </li>
                             <li>
-                                <a href="{{url("/list-product")}}">Colored</a>
+                                <a href="{{"/new-category"}}">New Category</a>
                             </li>
                             <li>
-                                <a href="pages/widgets/cards/no-header.html">No Header</a>
+                                <a href="{{"/edit-category"}}">Edit Category</a>
                             </li>
                         </ul>
                     </li>
                     <li>
                         <a href="javascript:void(0);" class="menu-toggle">
-                            <span>Infobox</span>
+                            <span>Brands</span>
                         </a>
                         <ul class="ml-menu">
                             <li>
-                                <a href="pages/widgets/infobox/infobox-1.html">Infobox-1</a>
+                                <a href="#">List Brands</a>
                             </li>
                             <li>
-                                <a href="pages/widgets/infobox/infobox-2.html">Infobox-2</a>
+                                <a href="#">New Brands</a>
                             </li>
                             <li>
-                                <a href="pages/widgets/infobox/infobox-3.html">Infobox-3</a>
+                                <a href="#">Edit Brands</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" class="menu-toggle">
+                            <span>Product</span>
+                        </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="#">List Product</a>
                             </li>
                             <li>
-                                <a href="pages/widgets/infobox/infobox-4.html">Infobox-4</a>
+                                <a href="#">New Product</a>
                             </li>
                             <li>
-                                <a href="pages/widgets/infobox/infobox-5.html">Infobox-5</a>
+                                <a href="#">Edit Product</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" class="menu-toggle">
+                            <span>User</span>
+                        </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="#">List User</a>
+                            </li>
+                            <li>
+                                <a href="#">New User</a>
+                            </li>
+                            <li>
+                                <a href="#">Edit User</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" class="menu-toggle">
+                            <span>User</span>
+                        </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="#">List User</a>
+                            </li>
+                            <li>
+                                <a href="#">New User</a>
+                            </li>
+                            <li>
+                                <a href="#">Edit User</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" class="menu-toggle">
+                            <span>User</span>
+                        </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="#">List User</a>
+                            </li>
+                            <li>
+                                <a href="#">New User</a>
+                            </li>
+                            <li>
+                                <a href="#">Edit User</a>
                             </li>
                         </ul>
                     </li>
@@ -85,74 +143,32 @@
                 </a>
                 <ul class="ml-menu">
                     <li>
-                        <a href="pages/ui/alerts.html">Alerts</a>
+                        <a href="#">Alerts</a>
                     </li>
                     <li>
-                        <a href="pages/ui/animations.html">Animations</a>
+                        <a href="#">Animations</a>
                     </li>
                     <li>
-                        <a href="pages/ui/badges.html">Badges</a>
+                        <a href="#">Badges</a>
                     </li>
 
                     <li>
-                        <a href="pages/ui/breadcrumbs.html">Breadcrumbs</a>
+                        <a href="#">Breadcrumbs</a>
                     </li>
                     <li>
-                        <a href="pages/ui/buttons.html">Buttons</a>
+                        <a href="#">Buttons</a>
                     </li>
                     <li>
-                        <a href="pages/ui/collapse.html">Collapse</a>
+                        <a href="#">Collapse</a>
                     </li>
                     <li>
-                        <a href="pages/ui/colors.html">Colors</a>
+                        <a href="#">Colors</a>
                     </li>
                     <li>
-                        <a href="pages/ui/dialogs.html">Dialogs</a>
+                        <a href="#">Dialogs</a>
                     </li>
                     <li>
-                        <a href="pages/ui/icons.html">Icons</a>
-                    </li>
-                    <li>
-                        <a href="pages/ui/labels.html">Labels</a>
-                    </li>
-                    <li>
-                        <a href="pages/ui/list-group.html">List Group</a>
-                    </li>
-                    <li>
-                        <a href="pages/ui/media-object.html">Media Object</a>
-                    </li>
-                    <li>
-                        <a href="pages/ui/modals.html">Modals</a>
-                    </li>
-                    <li>
-                        <a href="pages/ui/notifications.html">Notifications</a>
-                    </li>
-                    <li>
-                        <a href="pages/ui/pagination.html">Pagination</a>
-                    </li>
-                    <li>
-                        <a href="pages/ui/preloaders.html">Preloaders</a>
-                    </li>
-                    <li>
-                        <a href="pages/ui/progressbars.html">Progress Bars</a>
-                    </li>
-                    <li>
-                        <a href="pages/ui/range-sliders.html">Range Sliders</a>
-                    </li>
-                    <li>
-                        <a href="pages/ui/sortable-nestable.html">Sortable & Nestable</a>
-                    </li>
-                    <li>
-                        <a href="pages/ui/tabs.html">Tabs</a>
-                    </li>
-                    <li>
-                        <a href="pages/ui/thumbnails.html">Thumbnails</a>
-                    </li>
-                    <li>
-                        <a href="pages/ui/tooltips-popovers.html">Tooltips & Popovers</a>
-                    </li>
-                    <li>
-                        <a href="pages/ui/waves.html">Waves</a>
+                        <a href="#">Icons</a>
                     </li>
                 </ul>
             </li>
@@ -163,22 +179,10 @@
                 </a>
                 <ul class="ml-menu">
                     <li>
-                        <a href="pages/forms/basic-form-elements.html">Basic Form Elements</a>
+                        <a href="#">Basic Form Elements</a>
                     </li>
                     <li>
-                        <a href="pages/forms/advanced-form-elements.html">Advanced Form Elements</a>
-                    </li>
-                    <li>
-                        <a href="pages/forms/form-examples.html">Form Examples</a>
-                    </li>
-                    <li>
-                        <a href="pages/forms/form-validation.html">Form Validation</a>
-                    </li>
-                    <li>
-                        <a href="pages/forms/form-wizard.html">Form Wizard</a>
-                    </li>
-                    <li>
-                        <a href="pages/forms/editors.html">Editors</a>
+                        <a href="#">Advanced Form Elements</a>
                     </li>
                 </ul>
             </li>
@@ -189,13 +193,13 @@
                 </a>
                 <ul class="ml-menu">
                     <li>
-                        <a href="pages/tables/normal-tables.html">Normal Tables</a>
+                        <a href="#">Normal Tables</a>
                     </li>
                     <li>
-                        <a href="pages/tables/jquery-datatable.html">Jquery Datatables</a>
+                        <a href="#">Jquery Datatables</a>
                     </li>
                     <li>
-                        <a href="pages/tables/editable-table.html">Editable Tables</a>
+                        <a href="#">Editable Tables</a>
                     </li>
                 </ul>
             </li>
