@@ -47,7 +47,9 @@ Route::post("/save-brand","BrandController@saveBrand");
 
 //ORDER
 
-
+Route::get("/list-product","ProductController@listProduct");
+Route::get("/new-product","ProductController@newProduct");
+Route::post("/save-product","ProductController@saveProduct");
 
 
 
