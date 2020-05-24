@@ -36,7 +36,9 @@ Route::delete("/delete-category/{id}","CategoryController@deleteCategory");
 
 //PRODUCT
 
-
+Route::get("/list-product","ProductController@listProduct");
+Route::get("/new-product","ProductController@newProduct");
+Route::post("/save-product","ProductController@saveProduct");
 
 
 
