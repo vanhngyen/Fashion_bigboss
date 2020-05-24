@@ -23,7 +23,6 @@ Route::get("/edit-category/{id}","CategoryController@editCategory");
 Route::put("/update-category/{id}","CategoryController@updateCategory");
 Route::delete("/delete-category/{id}","CategoryController@deleteCategory");
 
-
 //BRAND
 
 
@@ -45,5 +44,20 @@ Route::delete("/delete-category/{id}","CategoryController@deleteCategory");
 
 
 
+
 //ORDER
 
+
+
+
+
+
+
+
+
+
+
+//
+Route::get("/login","WebController@login");
+Route::get("/register","WebController@register");
+Route::get("/forgot-password","WebController@forgotPassword");
