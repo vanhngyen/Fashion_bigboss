@@ -20,7 +20,7 @@ class ProductController extends Controller
         $categories = Category::all();
         $brands = Brand::all();
 
-        return view("product.new",["categories"=>$categories,"brands"=>$brands]);
+        return view("product.new",["categories"=>$categories,"brand"=>$brands]);
     }
 
     public function saveProduct(Request $request){

@@ -23,7 +23,7 @@ class CreateTableProducts extends Migration
             $table->unsignedBigInteger("brand_id");//thêm table
             $table->timestamps();
             $table->foreign("category_id")->references("id")->on("categories");//thêm table
-            $table->foreign("brand_id")->references("id")->on("brands");//thêm table
+            $table->foreign("brand_id")->references("id")->on("brand");//thêm table
         });
     }
 
