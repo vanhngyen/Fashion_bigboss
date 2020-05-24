@@ -13,7 +13,7 @@ class CreateTableBrands extends Migration
      */
     public function up()
     {
-        Schema::create('brands', function (Blueprint $table) {
+        Schema::create('brand', function (Blueprint $table) {
             $table->id();
             $table->string("brands_name")->unique();//thêm table
             $table->timestamps();
@@ -27,6 +27,6 @@ class CreateTableBrands extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('brands');
+        Schema::dropIfExists('brand');
     }
 }
