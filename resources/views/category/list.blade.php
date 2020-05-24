@@ -38,7 +38,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($categories as $category)
+                        @foreach($categories  as $category)
                             <tr>
                                 <td>{{$category->__get("id")}}</td>
                                 <td>{{$category->__get("category_name")}}</td>
@@ -58,7 +58,7 @@
                         @endforeach
                         </tbody>
                     </table>
-                    {!! $categories->links() !!}
+                    {!! $categories ->links() !!}
                 </div>
             </div>
         </div>
