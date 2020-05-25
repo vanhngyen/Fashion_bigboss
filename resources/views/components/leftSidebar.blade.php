@@ -2,7 +2,7 @@
     <!-- User Info -->
     <div class="user-info">
         <div class="image">
-            <img src="images/user.png" width="48" height="48" alt="User" />
+            <img src={{asset("images/user.png")}} width="48" height="48" alt="User" />
         </div>
         <div class="info-container">
             <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Vanh Nguyễn</div>
@@ -49,9 +49,6 @@
                             <li>
                                 <a href="{{"/new-category"}}">New Category</a>
                             </li>
-                            <li>
-                                <a href="{{"/edit-category"}}">Edit Category</a>
-                            </li>
                         </ul>
                     </li>
                     <li>
@@ -60,13 +57,10 @@
                         </a>
                         <ul class="ml-menu">
                             <li>
-                                <a href="#">List Brands</a>
+                                <a href="{{"/list-brand"}}">List Brands</a>
                             </li>
                             <li>
-                                <a href="#">New Brands</a>
-                            </li>
-                            <li>
-                                <a href="#">Edit Brands</a>
+                                <a href="{{"/new-brand"}}">New Brands</a>
                             </li>
                         </ul>
                     </li>
@@ -76,13 +70,10 @@
                         </a>
                         <ul class="ml-menu">
                             <li>
-                                <a href="#">List Product</a>
+                                <a href="{{"/list-product"}}">List Product</a>
                             </li>
                             <li>
-                                <a href="#">New Product</a>
-                            </li>
-                            <li>
-                                <a href="#">Edit Product</a>
+                                <a href="{{"/new-product"}}">New Product</a>
                             </li>
                         </ul>
                     </li>
@@ -97,40 +88,31 @@
                             <li>
                                 <a href="#">New User</a>
                             </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" class="menu-toggle">
+                            <span>Order</span>
+                        </a>
+                        <ul class="ml-menu">
                             <li>
-                                <a href="#">Edit User</a>
+                                <a href="#">List Order</a>
+                            </li>
+                            <li>
+                                <a href="#">New Order</a>
                             </li>
                         </ul>
                     </li>
                     <li>
                         <a href="javascript:void(0);" class="menu-toggle">
-                            <span>User</span>
+                            <span>Order Product</span>
                         </a>
                         <ul class="ml-menu">
                             <li>
-                                <a href="#">List User</a>
+                                <a href="#">List Order Product</a>
                             </li>
                             <li>
-                                <a href="#">New User</a>
-                            </li>
-                            <li>
-                                <a href="#">Edit User</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0);" class="menu-toggle">
-                            <span>User</span>
-                        </a>
-                        <ul class="ml-menu">
-                            <li>
-                                <a href="#">List User</a>
-                            </li>
-                            <li>
-                                <a href="#">New User</a>
-                            </li>
-                            <li>
-                                <a href="#">Edit User</a>
+                                <a href="#">New Order Product</a>
                             </li>
                         </ul>
                     </li>
