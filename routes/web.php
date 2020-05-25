@@ -27,15 +27,21 @@ Route::delete("/delete-category/{id}","CategoryController@deleteCategory");
 Route::get("/list-brand","BrandController@listBrand");
 Route::get("/new-brand","BrandController@newBrand");
 Route::post("/save-brand","BrandController@saveBrand");
-
+Route::get("/edit-brand/{id}","BrandController@editBrand");
+Route::put("/update-brand/{id}","BrandController@updateBrand");
+Route::delete("/delete-brand/{id}","BrandController@deleteBrand");
 
 
 
 
 
 //PRODUCT
-
-
+Route::get("/list-product","ProductController@listProduct");
+Route::get("/new-product","ProductController@newProduct");
+Route::post("/save-product","ProductController@saveProduct");
+Route::get("/edit-product/{id}","ProductController@editProduct");
+Route::put("/update-product/{id}","ProductController@updateProduct");
+Route::delete("/delete-product/{id}","ProductController@deleteProduct");
 
 
 
@@ -47,9 +53,7 @@ Route::post("/save-brand","BrandController@saveBrand");
 
 //ORDER
 
-Route::get("/list-product","ProductController@listProduct");
-Route::get("/new-product","ProductController@newProduct");
-Route::post("/save-product","ProductController@saveProduct");
+
 
 
 
@@ -63,3 +67,27 @@ Route::post("/save-product","ProductController@saveProduct");
 Route::get("/login","WebController@login");
 Route::get("/register","WebController@register");
 Route::get("/forgot-password","WebController@forgotPassword");
+
+
+
+
+
+
+
+
+
+
+//Order-product
+
+
+
+
+
+
+
+
+
+
+
+
+//user

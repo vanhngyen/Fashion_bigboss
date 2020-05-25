@@ -33,8 +33,8 @@
                             <th>Category Name</th>
                             <th>Created at</th>
                             <th>Updated at</th>
-                            <th></th>
-                            <th></th>
+                            <th>Edit</th>
+                            <th>Delete</th>
                         </tr>
                         </thead>
                         <tbody>

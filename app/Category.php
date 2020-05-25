@@ -17,4 +17,9 @@ class Category extends Model
             return "default value";
         return $this->__get($key);
     }
+
+
+    public function Products(){
+        return $this->hasMany("\App\Product");//trả về 1 colection
+    }
 }

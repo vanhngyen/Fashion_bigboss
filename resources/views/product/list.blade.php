@@ -23,7 +23,7 @@
                     </ul>
                 </div>
                 <div class="header">
-                    <a href="{{url("new-product")}}" class="float-right btn btn-outline-primary">+</a>
+                    <a href="{{url("/new-product")}}" class="float-right btn btn-outline-primary">+</a>
                 </div>
                 <div class="card-body table-responsive p-0">
                     <table class="table table-hover text-nowrap">
@@ -31,6 +31,7 @@
                         <tr>
                             <th>ID</th>
                             <th>Product Name</th>
+                            <th>Product Image</th>
                             <th>Description</th>
                             <th>Price</th>
                             <th>Quantity</th>
@@ -38,6 +39,8 @@
                             <th>Brand</th>
                             <th>Created At</th>
                             <th>Updated At</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -45,13 +48,24 @@
                             <tr>
                                 <td>{{$product->__get("id")}}</td>
                                 <td>{{$product->__get("product_name")}}</td>
+                                <td><img src="{{$product->getImage()}}" width="50" height="50"/></td>
                                 <td>{{$product->__get("product_desc")}}</td>
-                                <td>{{$product->__get("price")}}</td>
+                                <td>{{number_format($product->__get("price"))}}$</td>
                                 <td>{{$product->__get("qty")}}</td>
-                                <td>{{$product->__get("category_id")}}</td>
-                                <td>{{$product->__get("brand_id")}}</td>
+                                <td>{{$product->Category->__get("category_name")}}</td>
+                                <td>{{$product->Brand->__get("brands_name")}}</td>
                                 <td>{{$product->__get("created_at")}}</td>
                                 <td>{{$product->__get("updated_at")}}</td>
+                                <td>
+                                    <a href="{{url("/edit-product/{$product->__get("id")}")}}" class="btn btn-warning waves-effect">Edit</a>
+                                </td>
+                                <td>
+                                    <form action="{{url("/delete-product/{$product->__get("id")}")}}" method="post">
+                                        @method("DELETE")
+                                        @csrf
+                                        <button type="submit" onclick="return confirm('are you sure?');" class="btn btn-danger waves-effect">delete</button>
+                                    </form>
+                                </td>
                                 @endforeach
                             </tr>
                         </tbody>
