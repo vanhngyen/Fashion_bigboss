@@ -1,6 +1,6 @@
 @extends("layout")
-@section("contentHeader","Category")
-@section("title","Create a new category")
+@section("contentHeader","Product")
+@section("title","New Product")
 @section("content")
 
     <div class="row clearfix">
@@ -87,7 +87,7 @@
                                 </select>
                             </div>
                         </div>
-                        //
+
                         <!-- /.card-body -->
                         <br>
                         <button type="submit" class="btn btn-primary m-t-15 waves-effect">SUBMIT</button>

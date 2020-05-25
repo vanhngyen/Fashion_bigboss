@@ -18,11 +18,20 @@
 <!-- Animation Css -->
 <link href={{asset("plugins/animate-css/animate.css")}} rel="stylesheet" />
 
+<!-- Bootstrap Material Datetime Picker Css -->
+<link href={{asset("../../plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css")}} rel="stylesheet" />
+
+<!-- Bootstrap DatePicker Css -->
+<link href={{asset("../../plugins/bootstrap-datepicker/css/bootstrap-datepicker.css")}} rel="stylesheet" />
+
 <!-- Morris Chart Css-->
 <link href={{asset("plugins/morrisjs/morris.css")}} rel="stylesheet" />
+<!-- Bootstrap Select Css -->
+<link href={{asset("../../plugins/bootstrap-select/css/bootstrap-select.css")}} rel="stylesheet" />
 
 <!-- Custom Css -->
 <link href={{asset("css/style.css")}} rel="stylesheet">
 
 <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
 <link href={{asset("css/themes/all-themes.css")}} rel="stylesheet" />
+
