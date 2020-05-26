@@ -1,0 +1,64 @@
+@extends("layout")
+@section("title","Order Edit")
+@section("categoryPage","ORDER")
+@section("content")
+
+    <div class="row clearfix">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="card">
+                <div class="header">
+                    <h2>
+                        NEW ORDER
+                    </h2>
+                    <ul class="header-dropdown m-r--5">
+                        <li class="dropdown">
+                            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <i class="material-icons">more_vert</i>
+                            </a>
+                            <ul class="dropdown-menu pull-right">
+                                <li><a href="javascript:void(0);">Action</a></li>
+                                <li><a href="javascript:void(0);">Another action</a></li>
+                                <li><a href="javascript:void(0);">Something else here</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="body">
+                    <!-- /.card-header -->
+                    <!-- form start -->
+                    {{--        update thì method sẽ là put method trong form thi phai la post @method thi la put--}}
+                    <form role="form" action="{{url("/update-order/{$order->__get("id")}")}}" method="post">
+                        @method("PUT")
+                        {{--            // method"POST" dùng để báo route--}}
+                        @csrf
+                        {{--            // dùng để tạo mã token nếu thiếu sẽ báo lỗi 419--}}
+
+                        <label>User</label>
+                        <div class="form-group">
+                            <div class="form-line">
+                                <select name="user_id" class="form-control">
+                                    @foreach($users as $user)
+                                        <option value="{{$user->__get("id")}}">{{$user->__get("name")}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+                        <label>Grand total</label>
+                        <div class="form-group">
+                            <div class="form-line">
+                                <input value="{{$order->__get("grand_total")}}" class="form-control @error("grand_total") is-invalid @enderror" type="number" name="grand_total" placeholder="grand total.."/>
+                                @error("grand_total")
+                                <span class="error invalid-feedback">{{$message}}</span>
+                                @enderror
+                            </div>
+                        </div>
+                        <!-- /.card-body -->
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection

@@ -52,7 +52,12 @@ Route::delete("/delete-product/{id}","ProductController@deleteProduct");
 
 
 //ORDER
-
+Route::get("/list-order","OrderController@listOrder");
+Route::get("/new-order","OrderController@newOrder");
+Route::post("/save-order","OrderController@saveOrder");
+Route::get("/edit-order/{id}","OrderController@editOrder");
+Route::put("/update-order/{id}","OrderController@updateOrder");
+Route::delete("/delete-order/{id}","OrderController@deleteOrder");
 
 
 
@@ -64,9 +69,10 @@ Route::delete("/delete-product/{id}","ProductController@deleteProduct");
 
 
 //
-Route::get("/login","WebController@login");
-Route::get("/register","WebController@register");
-Route::get("/forgot-password","WebController@forgotPassword");
+Route::get("/login","UserController@login");
+Route::get("/register","UserController@register");
+Route::get("/forgot-password","UserController@forgotPassword");
+Route::get("/list-user","UserController@list");
 
 
 
