@@ -22,12 +22,24 @@ class BrandController extends Controller
 
     public function saveBrand(Request $request){
         $request->validate([
-            "brands_name"=>"required|string|min:6|unique:brands"
+            "brands_name"=>"required|string|min:6|unique:brands",
         ]);
 
         try {
+            $brand_image=null;
+            if($request->hasFile("brand_image")){
+                $file=$request->file("brand_image");
+                $allow=["png","jpg","jpeg","gif"];
+                $extName=$file->getClientOriginalExtension();
+                if(in_array($extName,$allow)){
+                    $fileName=time().$file->getClientOriginalName();
+                    $file->move(public_path("media"),$fileName);
+                    $brand_image="media/".$fileName;
+                }
+            }
             Brand::create([
                 "brands_name"=>$request->get("brands_name"),
+                "brand_image"=>$brand_image,
             ]);
         }catch (\Exception $exception){
             return redirect()->back();
@@ -46,8 +58,20 @@ class BrandController extends Controller
             "brands_name"=>"required|min:6|unique:brands,brands_name,{$id}"
         ]);
         try{
+            $brand_image=$brand->get("brand_image");
+            if($request->hasFile("brand_image")){
+                $file=$request->file("brand_image");
+                $allow=["png","jpg","jpeg","gif"];
+                $extName=$file->getClientOriginalExtension();
+                if(in_array($extName,$allow)){
+                    $fileName=time().$file->getClientOriginalName();
+                    $file->move(public_path("media"),$fileName);
+                    $brand_image="media/".$fileName;
+                }
+            }
             $brand->update([
-                "brands_name"=>$request->get("brands_name")
+                "brands_name"=>$request->get("brands_name"),
+                "brand_image"=>$brand_image,
             ]);
         }catch (\Exception $exception){
             return redirect()->back();

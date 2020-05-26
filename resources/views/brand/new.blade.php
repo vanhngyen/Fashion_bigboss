@@ -23,7 +23,7 @@
                     </ul>
                 </div>
                 <div class="body">
-                    <form role="form" action="{{url("save-brand")}}" method="post">
+                    <form role="form" action="{{url("save-brand")}}" method="post" enctype="multipart/form-data">
                         @method("POST")
                         @csrf
                         <label>Brand Name</label>
@@ -33,6 +33,12 @@
                                 @error("brands_name")
                                 <span class="error invalid-feedback">{{$message}}</span>
                                 @enderror
+                            </div>
+                        </div>
+                        <label>Brand Image</label>
+                        <div class="form-group">
+                            <div class="form-line">
+                                <input class="form-control" name="brand_image" type="file" placeholder="Brand image">
                             </div>
                         </div>
                         <br>
