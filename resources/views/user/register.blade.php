@@ -34,14 +34,19 @@
     </div>
     <div class="card">
         <div class="body">
-            <form id="sign_up" method="POST">
+            <form role="form" action="{{url("/save-user")}}" id="sign_up" method="POST">
+                @method("POST")
+                @csrf
                 <div class="msg">Register a new membership</div>
                 <div class="input-group">
                         <span class="input-group-addon">
                             <i class="material-icons">person</i>
                         </span>
                     <div class="form-line">
-                        <input type="text" class="form-control" name="namesurname" placeholder="Name Surname" required autofocus>
+                        <input class="form-control @error("name") is-invalid @enderror" type="text" name="name" placeholder="Enter Name"/>
+                        @error("name")
+                        <span class="error invalid-feedback">{{$message}}</span>
+                        @enderror
                     </div>
                 </div>
                 <div class="input-group">
@@ -49,7 +54,10 @@
                             <i class="material-icons">email</i>
                         </span>
                     <div class="form-line">
-                        <input type="email" class="form-control" name="email" placeholder="Email Address" required>
+                        <input class="form-control @error("email") is-invalid @enderror" type="email" name="email" placeholder="Enter Email"/>
+                        @error("email")
+                        <span class="error invalid-feedback">{{$message}}</span>
+                        @enderror
                     </div>
                 </div>
                 <div class="input-group">
@@ -57,7 +65,11 @@
                             <i class="material-icons">lock</i>
                         </span>
                     <div class="form-line">
-                        <input type="password" class="form-control" name="password" minlength="6" placeholder="Password" required>
+                        <input type="password" class="form-control" name="password"  minlength="6" placeholder="Password" required @error("password") is-invalid @enderror">
+                        @error("password")
+                        <span class="error invalid-feedback">{{$message}}</span>
+                        @enderror
+
                     </div>
                 </div>
                 <div class="input-group">
@@ -66,6 +78,9 @@
                         </span>
                     <div class="form-line">
                         <input type="password" class="form-control" name="confirm" minlength="6" placeholder="Confirm Password" required>
+                        @error("password")
+                        <span class="error invalid-feedback">{{$message}}</span>
+                        @enderror
                     </div>
                 </div>
                 <div class="form-group">

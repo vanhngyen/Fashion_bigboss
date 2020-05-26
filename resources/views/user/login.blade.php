@@ -34,14 +34,14 @@
     </div>
     <div class="card">
         <div class="body">
-            <form id="sign_in" method="POST">
+            <form action="{{url("/save-user")}}" id="sign_in" method="POST">
                 <div class="msg">Sign in to start your session</div>
                 <div class="input-group">
                         <span class="input-group-addon">
                             <i class="material-icons">person</i>
                         </span>
                     <div class="form-line">
-                        <input type="text" class="form-control" name="username" placeholder="Username" required autofocus>
+                        <input type="text" class="form-control" name="name" placeholder="Username" required autofocus>
                     </div>
                 </div>
                 <div class="input-group">
