@@ -23,14 +23,15 @@
                     </ul>
                 </div>
                 <div class="header">
-                    <a href="{{url("new-brand")}}" class="float-right btn btn-outline-primary">+</a>
+                    <a href="{{url("/new-brand")}}" class="float-right btn btn-outline-primary">+</a>
                 </div>
                 <div class="body table-responsive">
                     <table class="table table-striped">
                         <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Brand Name</th>
+                            <th>Brand Image</th>
+                            <th>Brand name</th>
                             <th>Created at</th>
                             <th>Updated at</th>
                             <th>Edit</th>
@@ -41,6 +42,7 @@
                         @foreach($brands as $brand)
                             <tr>
                                 <td>{{$brand->__get("id")}}</td>
+                                <td><img src="{{$brand->getImage()}}" width="50" height="50"/></td>
                                 <td>{{$brand->__get("brands_name")}}</td>
                                 <td>{{$brand->__get("created_at")}}</td>
                                 <td>{{$brand->__get("updated_at")}}</td>
