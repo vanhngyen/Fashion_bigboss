@@ -73,6 +73,7 @@ Route::get("/login","UserController@login");
 Route::get("/register","UserController@register");
 Route::get("/forgot-password","UserController@forgotPassword");
 Route::get("/list-user","UserController@list");
+Route::post("/save-user","UserController@saveUser");
 
 
 

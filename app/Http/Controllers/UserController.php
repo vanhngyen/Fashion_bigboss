@@ -21,4 +21,23 @@ class UserController extends Controller
     public function forgotPassword(){
         return view("user.forgotPassword");
     }
+    public function saveUser(Request $request){
+        $request->validate([
+            "name"=>"required|string",
+            "email"=>"required|string",
+            "password"=>"required|string|min:5",
+        ]);
+        try{
+            User::create([
+                "name"=>$request->get("name"),
+                "email"=>$request->get("email"),
+                "password"=>$request->get("password"),
+            ]);
+
+        }catch (\Exception $exception){
+            return redirect()->back();
+
+        }
+        return redirect()->to("/list-user");
+    }
 }
