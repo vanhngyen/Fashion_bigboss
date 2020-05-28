@@ -83,7 +83,7 @@
                         </a>
                         <ul class="ml-menu">
                             <li>
-                                <a href="#">List User</a>
+                                <a href="{{"/list-user"}}">List User</a>
                             </li>
                             <li>
                                 <a href="#">New User</a>
@@ -96,10 +96,10 @@
                         </a>
                         <ul class="ml-menu">
                             <li>
-                                <a href="#">List Order</a>
+                                <a href="{{"/list-order"}}">List Order</a>
                             </li>
                             <li>
-                                <a href="#">New Order</a>
+                                <a href="{{"/new-order"}}">New Order</a>
                             </li>
                         </ul>
                     </li>
