@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTableBrands extends Migration
+class UpdateTableUsersAddRole extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class CreateTableBrands extends Migration
      */
     public function up()
     {
-        Schema::create('brands', function (Blueprint $table) {
-            $table->id();
-            $table->string("brands_name")->unique();//thêm table
-            $table->timestamps();
+        Schema::table('users', function (Blueprint $table) {
+            //
+            $table->unsignedInteger("role")->after("password")->default(0);
         });
     }
 
@@ -27,6 +26,8 @@ class CreateTableBrands extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('brands');
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn("role");
+        });
     }
 }
