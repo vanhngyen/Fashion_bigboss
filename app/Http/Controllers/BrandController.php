@@ -44,7 +44,7 @@ class BrandController extends Controller
         }catch (\Exception $exception){
             return redirect()->back();
         }
-        return redirect()->to("/list-brand");
+        return redirect()->to("admin/list-brand");
     }
 
     public function editBrand($id){
@@ -76,7 +76,7 @@ class BrandController extends Controller
         }catch (\Exception $exception){
             return redirect()->back();
         }
-        return redirect()->to("/list-brand");
+        return redirect()->to("admin/list-brand");
     }
 
     public function deleteBrand($id){
@@ -86,7 +86,7 @@ class BrandController extends Controller
         }catch (\Exception $exception){
 
         }
-        return redirect()->to("/list-brand");
+        return redirect()->to("admin/list-brand");
     }
 
 }

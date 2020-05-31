@@ -38,6 +38,6 @@ class UserController extends Controller
             return redirect()->back();
 
         }
-        return redirect()->to("/list-user");
+        return redirect()->to("admin/list-user");
     }
 }

@@ -23,7 +23,7 @@
                     </ul>
                 </div>
                 <div class="header">
-                    <a href="{{url("/new-product")}}" class="float-right btn btn-outline-primary">+</a>
+                    <a href="{{url("admin/new-product")}}" class="float-right btn btn-outline-primary">+</a>
                 </div>
                 <div class="card-body table-responsive p-0">
                     <table class="table table-hover text-nowrap">
@@ -57,10 +57,10 @@
                                 <td>{{$product->__get("created_at")}}</td>
                                 <td>{{$product->__get("updated_at")}}</td>
                                 <td>
-                                    <a href="{{url("/edit-product/{$product->__get("id")}")}}" class="btn btn-warning waves-effect">Edit</a>
+                                    <a href="{{url("admin/edit-product/{$product->__get("id")}")}}" class="btn btn-warning waves-effect">Edit</a>
                                 </td>
                                 <td>
-                                    <form action="{{url("/delete-product/{$product->__get("id")}")}}" method="post">
+                                    <form action="{{url("admin/delete-product/{$product->__get("id")}")}}" method="post">
                                         @method("DELETE")
                                         @csrf
                                         <button type="submit" onclick="return confirm('are you sure?');" class="btn btn-danger waves-effect">delete</button>

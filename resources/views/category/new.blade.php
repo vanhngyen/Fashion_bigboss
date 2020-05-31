@@ -23,7 +23,7 @@
                     </ul>
                 </div>
                 <div class="body">
-                    <form role="form" action="{{url("save-category")}}" method="post">
+                    <form role="form" action="{{url("admin/save-category")}}" method="post">
                         @method("POST")
                         @csrf
                         <label>Category Name</label>

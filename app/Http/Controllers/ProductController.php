@@ -58,7 +58,7 @@ class ProductController extends Controller
         }catch (\Exception $exception){
             return redirect()->back();
         }
-        return redirect()->to("/list-product");
+        return redirect()->to("admin/list-product");
     }
 
     public function editProduct($id){
@@ -104,7 +104,7 @@ class ProductController extends Controller
         }catch (\Exception $exception){
             return redirect()->back();
         }
-        return redirect()->to("/list-product");
+        return redirect()->to("admin/list-product");
     }
 
     public function deleteProduct($id){
@@ -114,7 +114,7 @@ class ProductController extends Controller
         }catch (\Exception $exception){
 
         }
-        return redirect()->to("/list-product");
+        return redirect()->to("admin/list-product");
     }
 }
 
