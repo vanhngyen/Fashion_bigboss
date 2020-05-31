@@ -23,7 +23,7 @@
                     </ul>
                 </div>
                 <div class="header">
-                    <a href="{{url("new-category")}}" class="float-right btn btn-outline-primary">+</a>
+                    <a href="{{url("admin/new-category")}}" class="float-right btn btn-outline-primary">+</a>
                 </div>
                 <div class="body table-responsive">
                     <table class="table table-striped">

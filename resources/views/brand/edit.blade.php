@@ -3,7 +3,7 @@
 @section("categoryPage","BRAND")
 @section("content")
 <!-- form start -->
-        <form role="form" action="{{url("/update-brand/{$brand->__get("id")}")}}" method="post" enctype="multipart/form-data">
+        <form role="form" action="{{url("admin/update-brand/{$brand->__get("id")}")}}" method="post" enctype="multipart/form-data">
             @method("PUT")
             @csrf
             <div class="card-body">

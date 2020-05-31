@@ -31,7 +31,7 @@ class OrderController extends Controller
         }catch (\Exception $exception){
             return redirect()->back();
         }
-        return redirect()->to("/list-order");
+        return redirect()->to("admin/list-order");
     }
     public function editOrder($id){
         $order = Order::findOrFail($id);
@@ -53,7 +53,7 @@ class OrderController extends Controller
         }catch (\Exception $exception){
             return redirect()->back();
         }
-        return redirect()->to("/list-order");
+        return redirect()->to("admin/list-order");
     }
     public function deleteOrder($id){
         $order = Order::findOrfail($id);
@@ -62,7 +62,7 @@ class OrderController extends Controller
         }catch (\Exception $exception){
 
         }
-        return redirect()->to("/list-order");
+        return redirect()->to("admin/list-order");
     }
 
 }

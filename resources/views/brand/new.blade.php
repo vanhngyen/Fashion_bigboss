@@ -23,7 +23,7 @@
                     </ul>
                 </div>
                 <div class="body">
-                    <form role="form" action="{{url("save-brand")}}" method="post" enctype="multipart/form-data">
+                    <form role="form" action="{{url("admin/save-brand")}}" method="post" enctype="multipart/form-data">
                         @method("POST")
                         @csrf
                         <label>Brand Name</label>
