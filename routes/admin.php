@@ -82,3 +82,4 @@ Route::post("/save-user","UserController@saveUser");
 
 
 //user
+Route::get("/home","WebController@home");
