@@ -66,8 +66,8 @@
                                         <button type="submit" onclick="return confirm('are you sure?');" class="btn btn-danger waves-effect">delete</button>
                                     </form>
                                 </td>
-                                @endforeach
                             </tr>
+                        @endforeach
                         </tbody>
                     </table>
                 </div>
