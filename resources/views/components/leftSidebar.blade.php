@@ -63,10 +63,10 @@
                         </a>
                         <ul class="ml-menu">
                             <li>
-                                <a href="{{"/list-category"}}">List Category</a>
+                                <a href="{{"admin/list-category"}}">List Category</a>
                             </li>
                             <li>
-                                <a href="{{"/new-category"}}">New Category</a>
+                                <a href="{{"admin/new-category"}}">New Category</a>
                             </li>
                         </ul>
                     </li>
@@ -76,10 +76,10 @@
                         </a>
                         <ul class="ml-menu">
                             <li>
-                                <a href="{{"/list-brand"}}">List Brands</a>
+                                <a href="{{"admin/list-brand"}}">List Brands</a>
                             </li>
                             <li>
-                                <a href="{{"/new-brand"}}">New Brands</a>
+                                <a href="{{"admin/new-brand"}}">New Brands</a>
                             </li>
                         </ul>
                     </li>
@@ -89,10 +89,10 @@
                         </a>
                         <ul class="ml-menu">
                             <li>
-                                <a href="{{"/list-product"}}">List Product</a>
+                                <a href="{{"admin/list-product"}}">List Product</a>
                             </li>
                             <li>
-                                <a href="{{"/new-product"}}">New Product</a>
+                                <a href="{{"admin/new-product"}}">New Product</a>
                             </li>
                         </ul>
                     </li>
@@ -102,7 +102,7 @@
                         </a>
                         <ul class="ml-menu">
                             <li>
-                                <a href="{{"/list-user"}}">List User</a>
+                                <a href="{{"admin/list-user"}}">List User</a>
                             </li>
                             <li>
                                 <a href="#">New User</a>
@@ -115,10 +115,10 @@
                         </a>
                         <ul class="ml-menu">
                             <li>
-                                <a href="{{"/list-order"}}">List Order</a>
+                                <a href="{{"admin/list-order"}}">List Order</a>
                             </li>
                             <li>
-                                <a href="{{"/new-order"}}">New Order</a>
+                                <a href="{{"admin/new-order"}}">New Order</a>
                             </li>
                         </ul>
                     </li>
