@@ -297,10 +297,9 @@
                     <div class="col">
                         <div class="page_nav">
                             <ul class="d-flex flex-row align-items-start justify-content-center">
-                                <li class="active"><a href="category.html">Women</a></li>
-                                <li><a href="category.html">Men</a></li>
-                                <li><a href="category.html">Kids</a></li>
-                                <li><a href="category.html">Home Deco</a></li>
+                                @foreach($categories as $f)
+                                    <li><a href="#">{{$f->__get("category_name")}}</a></li>
+                                @endforeach
                             </ul>
                         </div>
                     </div>

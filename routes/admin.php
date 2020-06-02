@@ -7,6 +7,7 @@ Route::get("/edit-category/{id}","CategoryController@editCategory");
 Route::put("/update-category/{id}","CategoryController@updateCategory");
 Route::delete("/delete-category/{id}","CategoryController@deleteCategory");
 
+
 //BRAND
 Route::get("/list-brand","BrandController@listBrand");
 Route::get("/new-brand","BrandController@newBrand");
