@@ -10,9 +10,11 @@
     <!-- Navigation -->
     <div class="menu_nav">
         <ul>
-            @foreach($categories as $category)
-                <li><a href="#">{{$category->__get("category_name")}}</a></li>
-            @endforeach
+            <li><a href="#">Women</a></li>
+            <li><a href="#">Men</a></li>
+            <li><a href="#">Kids</a></li>
+            <li><a href="#">Home Deco</a></li>
+            <li><a href="#">Contact</a></li>
         </ul>
     </div>
     <!-- Contact Info -->
