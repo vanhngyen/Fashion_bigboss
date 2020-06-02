@@ -2,19 +2,21 @@
 
 namespace App\Http\Controllers;
 use App\Category;
-use \App\User;
+use App\Product;
 use Illuminate\Http\Request;
 
 class WebController extends Controller
 {
 
     public function index(){
-        return view("layouts.app");
+        return view("home");
     }
     public function home(){
         $categories=Category::all();
+        $products=Product::all();
         return view("frontend.home",[
             "categories"=>$categories,
+            "products"=>$products
         ]);
     }
 }

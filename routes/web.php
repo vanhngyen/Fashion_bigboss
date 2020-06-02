@@ -13,8 +13,7 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 Auth::routes();
-Route::get("/","WebController@index");
-Route::get("/home1","WebController@home");
+
 require_once "user.php";
 Route::group(["middleware"=>["admin","auth"],"prefix"=>"admin"],function (){
     require_once "admin.php";
