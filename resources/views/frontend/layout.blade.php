@@ -14,6 +14,7 @@
     <x-frontend.header/>
 
     @yield("content")
+    <x-frontend.footer/>
 
 </div>
 

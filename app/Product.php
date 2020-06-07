@@ -18,7 +18,9 @@ class Product extends Model
         "category_id",
         "brand_id"
     ];
-
+    public function getPrice(){
+        return "$".number_format($this->__get("price"),2);
+    }
     public function getImage(){
         if(is_null($this->__get("product_image"))){
             return asset("media/image_defauld.png");
@@ -33,5 +35,8 @@ class Product extends Model
     public function Brand()
     {
         return $this->belongsTo("\App\Brand");
+    }
+    public function getProductUrl(){
+        return url("/product/{$this->__get("slug")}");
     }
 }
