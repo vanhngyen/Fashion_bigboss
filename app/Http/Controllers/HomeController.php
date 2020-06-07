@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Brand;
 use App\Category;
 use App\Product;
 use Illuminate\Http\Request;
@@ -27,6 +28,20 @@ class HomeController extends Controller
     {
         $most_views=Product::orderBy("view_count","DESC")->limit(8)->get();
         $categories=Category::all();
+        $products=Product::all();
+        $brands=Brand::all();
+        foreach ($products as $p){
+            $slug=\Illuminate\Support\Str::slug($p->__get("product_name"));
+            $p->slug=$slug=$slug.$p->__get("id");
+            $p->save();
+            //$p->update(["slug"=>$slug.$p->__get("id");
+        }
+        foreach ($categories as $p){
+            $slug=\Illuminate\Support\Str::slug($p->__get("category_name"));
+            $p->slug=$slug=$slug.$p->__get("id");
+            $p->save();
+            //$p->update(["slug"=>$slug.$p->__get("id");
+        }
         $featureds=Product::orderBy("updated_at","DESC")->limit(8)->get();
         $lastest_1=Product::orderBy("created_at","DESC")->limit(3)->get();
         $lastest_2=Product::orderBy("created_at","DESC")->offset(3)->limit(3)->get();
