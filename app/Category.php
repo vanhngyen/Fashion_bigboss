@@ -12,6 +12,9 @@ class Category extends Model
         "category_name"
     ];
 
+    public function getCategoryUrl(){
+        return url("/category/{$this->__get("slug")}");
+    }
     public function get($key){
         if(is_null($this->__get($key)))
             return "default value";

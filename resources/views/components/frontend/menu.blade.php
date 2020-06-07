@@ -10,11 +10,9 @@
     <!-- Navigation -->
     <div class="menu_nav">
         <ul>
-            <li><a href="#">Women</a></li>
-            <li><a href="#">Men</a></li>
-            <li><a href="#">Kids</a></li>
-            <li><a href="#">Home Deco</a></li>
-            <li><a href="#">Contact</a></li>
+            @foreach(\App\Category::all() as $cat)
+                <li><a href="{{$cat->getCategoryUrl()}}">{{$cat->__get("category_name")}}</a></li>
+            @endforeach
         </ul>
     </div>
     <!-- Contact Info -->
