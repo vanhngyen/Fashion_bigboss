@@ -69,18 +69,18 @@
                 <!-- Product -->
                 <div class="col-xl-4 col-md-6 grid-item new">
                     <div class="product">
-                        <div class="product_image"><img src="{{asset("images/product_1.jpg")}}" alt=""></div>
+                        <div class="product_image"><img src="{{$product->getImage()}}" alt=""></div>
                         <div class="product_content">
                             <div class="product_info d-flex flex-row align-items-start justify-content-start">
                                 <div>
                                     <div>
-                                        <div class="product_name"><a href="#">Cool Clothing with Brown Stripes</a></div>
+                                        <div class="product_name"><a href="#">{{$product->__get("product_name")}}</a></div>
                                         <div class="product_category">In <a href="#">Category</a></div>
                                     </div>
                                 </div>
                                 <div class="ml-auto text-right">
                                     <div class="rating_r rating_r_4 home_item_rating"><i></i><i></i><i></i><i></i><i></i></div>
-                                    <div class="product_price text-right">$3<span>.99</span></div>
+                                    <div class="product_price text-right"><span>{{$product->__get("product_price")}}</span></div>
                                 </div>
                             </div>
                             <div class="product_buttons">
