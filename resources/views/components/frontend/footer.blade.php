@@ -1,93 +1,143 @@
-<footer class="footer">
-    <div class="footer_content">
-        <div class="container">
-            <div class="row">
+<footer class="bg3 p-t-75 p-b-32">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-lg-3 p-b-50">
+                <h4 class="stext-301 cl0 p-b-30">
+                    Categories
+                </h4>
 
-                <!-- About -->
-                <div class="col-lg-4 footer_col">
-                    <div class="footer_about">
-                        <div class="footer_logo">
-                            <a href="#">
-                                <div class="d-flex flex-row align-items-center justify-content-start">
-                                    <div class="footer_logo_icon"><img src="images/logo_2.png" alt=""></div>
-                                    <div>Little Closet</div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="footer_about_text">
-                            <p>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse potenti. Fusce venenatis vel velit vel euismod.</p>
-                        </div>
-                    </div>
-                </div>
+                <ul>
+                    <li class="p-b-10">
+                        <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+                            Women
+                        </a>
+                    </li>
 
-                <!-- Footer Links -->
-                <div class="col-lg-4 footer_col">
-                    <div class="footer_menu">
-                        <div class="footer_title">Support</div>
-                        <ul class="footer_list">
-                            <li>
-                                <a href="#"><div>Customer Service<div class="footer_tag_1">online now</div></div></a>
-                            </li>
-                            <li>
-                                <a href="#"><div>Return Policy</div></a>
-                            </li>
-                            <li>
-                                <a href="#"><div>Size Guide<div class="footer_tag_2">recommended</div></div></a>
-                            </li>
-                            <li>
-                                <a href="#"><div>Terms and Conditions</div></a>
-                            </li>
-                            <li>
-                                <a href="#"><div>Contact</div></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                    <li class="p-b-10">
+                        <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+                            Men
+                        </a>
+                    </li>
 
-                <!-- Footer Contact -->
-                <div class="col-lg-4 footer_col">
-                    <div class="footer_contact">
-                        <div class="footer_title">Stay in Touch</div>
-                        <div class="newsletter">
-                            <form action="#" id="newsletter_form" class="newsletter_form">
-                                <input type="email" class="newsletter_input" placeholder="Subscribe to our Newsletter" required="required">
-                                <button class="newsletter_button">+</button>
-                            </form>
-                        </div>
-                        <div class="footer_social">
-                            <div class="footer_title">Social</div>
-                            <ul class="footer_social_list d-flex flex-row align-items-start justify-content-start">
-                                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
+                    <li class="p-b-10">
+                        <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+                            Shoes
+                        </a>
+                    </li>
+
+                    <li class="p-b-10">
+                        <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+                            Watches
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-sm-6 col-lg-3 p-b-50">
+                <h4 class="stext-301 cl0 p-b-30">
+                    Help
+                </h4>
+
+                <ul>
+                    <li class="p-b-10">
+                        <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+                            Track Order
+                        </a>
+                    </li>
+
+                    <li class="p-b-10">
+                        <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+                            Returns
+                        </a>
+                    </li>
+
+                    <li class="p-b-10">
+                        <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+                            Shipping
+                        </a>
+                    </li>
+
+                    <li class="p-b-10">
+                        <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+                            FAQs
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-sm-6 col-lg-3 p-b-50">
+                <h4 class="stext-301 cl0 p-b-30">
+                    GET IN TOUCH
+                </h4>
+
+                <p class="stext-107 cl7 size-201">
+                    Any questions? Let us know in store at 8th floor, 379 Hudson St, New York, NY 10018 or call us on (+1) 96 716 6879
+                </p>
+
+                <div class="p-t-27">
+                    <a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
+                        <i class="fa fa-facebook"></i>
+                    </a>
+
+                    <a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
+                        <i class="fa fa-instagram"></i>
+                    </a>
+
+                    <a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
+                        <i class="fa fa-pinterest-p"></i>
+                    </a>
                 </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-3 p-b-50">
+                <h4 class="stext-301 cl0 p-b-30">
+                    Newsletter
+                </h4>
+
+                <form>
+                    <div class="wrap-input1 w-full p-b-4">
+                        <input class="input1 bg-none plh1 stext-107 cl7" type="text" name="email" placeholder="email@example.com">
+                        <div class="focus-input1 trans-04"></div>
+                    </div>
+
+                    <div class="p-t-18">
+                        <button class="flex-c-m stext-101 cl0 size-103 bg1 bor1 hov-btn2 p-lr-15 trans-04">
+                            Subscribe
+                        </button>
+                    </div>
+                </form>
             </div>
         </div>
-    </div>
-    <div class="footer_bar">
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <div class="footer_bar_content d-flex flex-md-row flex-column align-items-center justify-content-start">
-                        <div class="copyright order-md-1 order-2"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>
-                        <nav class="footer_nav ml-md-auto order-md-2 order-1">
-                            <ul class="d-flex flex-row align-items-center justify-content-start">
-                                <li><a href="category.html">Women</a></li>
-                                <li><a href="category.html">Men</a></li>
-                                <li><a href="category.html">Kids</a></li>
-                                <li><a href="category.html">Home Deco</a></li>
-                                <li><a href="#">Contact</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
+
+        <div class="p-t-40">
+            <div class="flex-c-m flex-w p-b-18">
+                <a href="#" class="m-all-1">
+                    <img src="images/icons/icon-pay-01.png" alt="ICON-PAY">
+                </a>
+
+                <a href="#" class="m-all-1">
+                    <img src="images/icons/icon-pay-02.png" alt="ICON-PAY">
+                </a>
+
+                <a href="#" class="m-all-1">
+                    <img src="images/icons/icon-pay-03.png" alt="ICON-PAY">
+                </a>
+
+                <a href="#" class="m-all-1">
+                    <img src="images/icons/icon-pay-04.png" alt="ICON-PAY">
+                </a>
+
+                <a href="#" class="m-all-1">
+                    <img src="images/icons/icon-pay-05.png" alt="ICON-PAY">
+                </a>
             </div>
+
+            <p class="stext-107 cl6 txt-center">
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+
+            </p>
         </div>
     </div>
 </footer>

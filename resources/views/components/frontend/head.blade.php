@@ -1,21 +1,33 @@
-<head>
-    <title>Little Closet</title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Little Closet template">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="{{asset("styles/bootstrap-4.1.2/bootstrap.min.css")}}">
-    <link href="{{asset("plugins/font-awesome-4.7.0/css/font-awesome.min.css")}}" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" type="text/css" href="{{asset("plugins/OwlCarousel2-2.2.1/owl.carousel.css")}}">
-    <link rel="stylesheet" type="text/css" href="{{asset("plugins/OwlCarousel2-2.2.1/owl.theme.default.css")}}">
-    <link rel="stylesheet" type="text/css" href="{{asset("plugins/OwlCarousel2-2.2.1/animate.css")}}">
-    <link rel="stylesheet" type="text/css" href="{{asset("styles/main_styles.css")}}">
-    <link rel="stylesheet" type="text/css" href={{asset("styles/responsive.css")}}>
-    @yield("css")
-{{--    category--}}
-
-{{--    --}}
-{{--    <link href={{asset("plugins/bootstrap/css/bootstrap.css")}} rel="stylesheet">--}}
-{{--    <link href={{asset("css/style.css")}} rel="stylesheet">--}}
-{{--    <link href={{asset("https://fonts.googleapis.com/icon?family=Material+Icons")}} rel="stylesheet" type="text/css">--}}
-</head>
+<title>Home</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+<link rel="icon" type="image/png" href="images/icons/favicon.png"/>
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="fonts/linearicons-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="vendor/slick/slick.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="vendor/MagnificPopup/magnific-popup.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="vendor/perfect-scrollbar/perfect-scrollbar.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="css/util.css">
+<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
