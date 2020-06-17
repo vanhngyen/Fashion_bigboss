@@ -67,20 +67,21 @@
             <div class="row products_row products_container grid">
 
                 <!-- Product -->
+                @foreach($products as $p)
                 <div class="col-xl-4 col-md-6 grid-item new">
                     <div class="product">
-                        <div class="product_image"><img src="{{$product->getImage()}}" alt=""></div>
+                        <div class="product_image"><img src="{{$p->getImage()}}" alt=""></div>
                         <div class="product_content">
                             <div class="product_info d-flex flex-row align-items-start justify-content-start">
                                 <div>
                                     <div>
-                                        <div class="product_name"><a href="#">{{$product->__get("product_name")}}</a></div>
+                                        <div class="product_name"><a href="#">{{$p->__get("product_name")}}</a></div>
                                         <div class="product_category">In <a href="#">Category</a></div>
                                     </div>
                                 </div>
                                 <div class="ml-auto text-right">
                                     <div class="rating_r rating_r_4 home_item_rating"><i></i><i></i><i></i><i></i><i></i></div>
-                                    <div class="product_price text-right"><span>{{$product->__get("product_price")}}</span></div>
+                                    <div class="product_price text-right"><span>{{$p->getPrice()}}</span></div>
                                 </div>
                             </div>
                             <div class="product_buttons">
@@ -96,7 +97,7 @@
                         </div>
                     </div>
                 </div>
-
+                @endforeach
 
             </div>
             <div class="row page_nav_row">
