@@ -6,7 +6,7 @@
 <body class="animsition">
 
 <!-- Header -->
-<x-frontend.header/>
+@yield("header")
 
 <!-- Cart -->
 <div class="wrap-header-cart js-panel-cart">
