@@ -11,21 +11,20 @@
                     </div>
 
                     <div class="right-top-bar flex-w h-full">
-                        <a href="#" class="flex-c-m trans-04 p-lr-25">
-                            Help & FAQs
-                        </a>
+                        @guest
+                            <a class="flex-c-m trans-04 p-lr-25" href="{{url("/login")}}"><i class="fa fa-user"></i> Login</a>
+                        @else
 
-                        <a href="#" class="flex-c-m trans-04 p-lr-25">
-                            My Account
-                        </a>
+                            <a class="flex-c-m trans-04 p-lr-25" href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
 
-                        <a href="#" class="flex-c-m trans-04 p-lr-25">
-                            EN
-                        </a>
-
-                        <a href="#" class="flex-c-m trans-04 p-lr-25">
-                            USD
-                        </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        @endguest
                     </div>
                 </div>
             </div>
