@@ -466,8 +466,10 @@ class ComposerStaticInit7d16f771b980c0adb1167e668a1e3801
 
     public static $classMap = array (
         'App\\Brand' => __DIR__ . '/../..' . '/app/Brand.php',
+        'App\\Cart' => __DIR__ . '/../..' . '/app/Cart.php',
         'App\\Category' => __DIR__ . '/../..' . '/app/Category.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
+        'App\\Events\\OrderCreated' => __DIR__ . '/../..' . '/app/Events/OrderCreated.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Auth\\ConfirmPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ConfirmPasswordController.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
@@ -494,6 +496,7 @@ class ComposerStaticInit7d16f771b980c0adb1167e668a1e3801
         'App\\Http\\Middleware\\TrustHosts' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustHosts.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Listeners\\CleanCart' => __DIR__ . '/../..' . '/app/Listeners/CleanCart.php',
         'App\\Order' => __DIR__ . '/../..' . '/app/Order.php',
         'App\\OrdersProducts' => __DIR__ . '/../..' . '/app/OrdersProducts.php',
         'App\\Product' => __DIR__ . '/../..' . '/app/Product.php',
