@@ -99,3 +99,18 @@
 </script>
 <!--===============================================================================================-->
 <script src="{{asset("js/main.js")}}"></script>
+<script type="text/javascript">
+    function addToCart(productId) {
+        $.ajax({
+            url:"{{url("/cart/add")}}/"+productId,
+            method:"POST",
+            data:{
+                qty: 1,
+                _token:"{{csrf_token()}}"
+            },
+            success: function () {
+                alert("Mua sản phẩm thành công!");
+            }
+        });
+    }
+</script>
