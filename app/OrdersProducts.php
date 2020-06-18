@@ -11,6 +11,6 @@ class OrdersProducts extends Model
         "order_id",
         "product_id",
         "qty",
-        "price"
+        "price",
     ];
 }

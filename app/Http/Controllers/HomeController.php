@@ -63,55 +63,58 @@ class HomeController extends Controller
     public function product(Product $product){
         if(!session()->has("view_count_{$product->__get("id")}")){
             $product->increment("view_count");
-            session(["view_count_{$product->__get("id")}"=>true]);
+            session(["view_count_{$product->__get("id")}"=> true]);
         }
-        return view("frontend.product",
-        [
-            'product'=>$product
+        return view("frontend.product",[
+            'product'=> $product
         ]);
     }
-    public function addToCart(Product $product, Request $request){
-        $qty=$request->has("qty")&&(int)$request->get("qty")>0?(int)$request->get("qty"):1;
-        $myCart=session()->has("my_cart")&&is_array(session("my_cart"))?session("my_cart"):[];
-        $contain=false;
-        foreach ($myCart as $key=>$item){
-            if($item["product_id"]==$product->__get("id")){
-                $myCart[$key]["qty"]+=$qty;
-                $contain=true;
+
+    public function addToCart(Product $product,Request $request){
+        $qty = $request->has("qty")&& (int)$request->get("qty")>0?(int)$request->get("qty"):1;
+        $myCart = session()->has("my_cart")&& is_array(session("my_cart"))?session("my_cart"):[];
+        $contain = false;
+        foreach ($myCart as $item){
+            if($item["product_id"] == $product->__get("id")){
+                $item["qty"]+= $qty;
+                $contain = true;
                 break;
             }
         }
         if(!$contain){
-            $myCart[]=[
-                "product_id"=>$product->__get("id"),
-                "qty"=>$qty,
+            $myCart[] = [
+                "product_id" => $product->__get("id"),
+                "qty" => $qty
             ];
         }
         session(["my_cart"=>$myCart]);
         return redirect()->to("/shopping-cart");
     }
+
     public function shoppingCart(){
-        $myCart=session()->has("my_cart")&&is_array(session("my_cart"))?session("my_cart"):[];
-        $productIds=[];
+        $myCart = session()->has("my_cart") && is_array(session("my_cart"))?session("my_cart"):[];
+        $productIds = [];
         foreach ($myCart as $item){
-            $productIds[]=$item["product_id"];
+            $productIds[] = $item["product_id"];
         }
-        $grandTotal=0;
-        $products=Product::find($productIds);
+        $grandTotal = 0;
+        $products = Product::find($productIds);
         foreach ($products as $p){
             foreach ($myCart as $item){
-                if($p->__get("id")==$item["product_id"]){
-                    $grandTotal+=($p->__get("price")*$item["qty"]);
-                    $p->cart_qty=$item["qty"];
+                if($p->__get("id") == $item["product_id"]){
+                    $grandTotal += ($p->__get("price")*$item["qty"]);
+                    $p->cart_qty = $item["qty"];
                 }
             }
         }
         return view("frontend.cart",[
-           "products"=>$products,
-           "grandTotal"=>$grandTotal
+            "products"=>$products,
+            "grandTotal" => $grandTotal
         ]);
     }
+
     public function checkout(){
         return view("frontend.checkout");
     }
+
 }
