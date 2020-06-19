@@ -79,8 +79,8 @@
                         $productIds[] = $item["product_id"];
                     }
                     $grandTotal = 0;
-                    $products = \App\Product::find($productIds);
-                    foreach ($products as $p){
+                    $myproducts = \App\Product::find($productIds);
+                    foreach ($myproducts as $p){
                         foreach ($myCart as $item){
                             if($p->__get("id") == $item["product_id"])
                                 $grandTotal += ($p->__get("price")*$item["qty"]);
@@ -243,7 +243,7 @@
                 <ul class="header-cart-wrapitem w-full">
                     <li class="header-cart-item flex-w flex-t m-b-12">
                         <div class="header-cart-item-img">
-                            <img src="images/item-cart-01.jpg" alt="IMG">
+                            <img src="{{asset("images/item-cart-01.jpg")}}" alt="IMG">
                         </div>
 
                         <div class="header-cart-item-txt p-t-8">
@@ -326,7 +326,9 @@
 
 
     <!-- Shoping Cart -->
-    <form class="bg0 p-t-75 p-b-85">
+    <form class="bg0 p-t-75 p-b-85" action="{{url("/checkout")}}" method="post">
+            @method("POST")
+            @csrf
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 col-xl-7 m-lr-auto m-b-50">
@@ -342,7 +344,8 @@
                                 </tr>
                                 @foreach($products as $p)
 
-                                <tr class="table_row">
+
+                                    <tr class="table_row">
                                     <td class="column-1">
                                         <div class="how-itemcart1">
                                             <img src="{{$p->getImage()}}" alt="IMG">
@@ -355,7 +358,6 @@
                                             <div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
                                                 <i class="fs-16 zmdi zmdi-minus"></i>
                                             </div>
-
                                             <input class="mtext-104 cl3 txt-center num-product" type="number" name="num-product1" value="{{$p->cart_qty}}">
 
                                             <div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m">
@@ -363,7 +365,7 @@
                                             </div>
                                         </div>
                                     </td>
-                                    <td class="column-5"> ${{$p->cart_qty * $p->__get("price")}}</td>
+                                    <td class="column-5">{{$p->cart_qty * $p->__get("price")}}</td>
                                 </tr>
                                 @endforeach
 
@@ -464,7 +466,7 @@
                             </div>
                         </div>
 
-                        <button class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer">
+                        <button type="submit" class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer">
                             Proceed to Checkout
                         </button>
                     </div>

@@ -2,10 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Brand;
+use App\Cart;
 use App\Category;
+use App\Events\OrderCreated;
+use App\Order;
 use App\Product;
+use App\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\DB;
+use Psy\Util\Str;
+
 
 class HomeController extends Controller
 {
@@ -74,9 +83,10 @@ class HomeController extends Controller
         $qty = $request->has("qty")&& (int)$request->get("qty")>0?(int)$request->get("qty"):1;
         $myCart = session()->has("my_cart")&& is_array(session("my_cart"))?session("my_cart"):[];
         $contain = false;
-        foreach ($myCart as $item){
+        foreach ($myCart as $key=> $item){
             if($item["product_id"] == $product->__get("id")){
-                $item["qty"]+= $qty;
+               // $item["qty"]+= $qty;
+                $myCart[$key]["qty"]+=$qty;
                 $contain = true;
                 break;
             }
@@ -104,9 +114,11 @@ class HomeController extends Controller
                 if($p->__get("id") == $item["product_id"]){
                     $grandTotal += ($p->__get("price")*$item["qty"]);
                     $p->cart_qty = $item["qty"];
+//                    dd($p);
                 }
             }
         }
+//        dd($products);
         return view("frontend.cart",[
             "products"=>$products,
             "grandTotal" => $grandTotal
@@ -114,7 +126,52 @@ class HomeController extends Controller
     }
 
     public function checkout(){
-        return view("frontend.checkout");
+        $cart = Cart::where("user_id",Auth::id())
+            ->where("is_checkout",true)
+            ->with("getItems")
+            ->firstOrFail();
+        return view("frontend.checkout",[
+            "cart"=>$cart
+        ]);
     }
 
+    public function placeOrder(Request $request){
+        $request->validate([
+            "username"=>"required",
+            "address"=>"required",
+            "telephone"=>"required",
+        ]);
+        $cart = Cart::where("user_id",Auth::id())
+            ->where("is_checkout",true)
+            ->with("getItems")
+            ->firstOrFail();
+        $grandTotal = 0;
+        foreach ($cart->getItems as $item){
+            $grandTotal+= $item->pivot->__get("qty")*$item->__get("price");
+        }
+        try{
+            $order = Order::create([
+                "user_id"=>Auth::id(),
+                "username"=>$request->get("username"),
+                "address"=>$request->get("address"),
+                "telephone"=>$request->get("telephone"),
+                "note"=>$request->get("note"),
+                "grand_total"=>$grandTotal,
+                "status"=> Order::PENDING
+            ]);
+            foreach ($cart->getItems as $item){
+                DB::table("orders_products")->insert([
+                    "order_id"=>$order->__get("id"),
+                    "product_id"=>$item->__get("id"),
+                    "price" => $item->__get("price"),
+                    "qty"=> $item->pivot->__get("qty")
+                ]);
+            }
+            event(new OrderCreated($order));
+
+        }catch (\Exception $exception){
+
+        }
+        return redirect()->to("/");
+    }
 }
