@@ -22,7 +22,7 @@ class CategoryController extends Controller
     }
     public function saveCategory(Request $request){
         $request->validate([
-            "category_name"=> "required|string|min:6|unique:categories"
+            "category_name"=> "required|string|min:2|unique:categories"
         ]);
         try{
             Category::create([
