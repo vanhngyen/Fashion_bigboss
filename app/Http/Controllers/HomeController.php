@@ -36,6 +36,12 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $woman = Product::with("Category")->with("Brand")->where("category_id","=","2")->get();
+        $man = Product::with("Category")->with("Brand")->where("category_id","=","1")->get();
+        $shoes = Product::with("Category")->with("Brand")->where("category_id","=","5")->get();
+        $bag = Product::with("Category")->with("Brand")->where("category_id","=","4")->get();
+        $watches = Product::with("Category")->with("Brand")->where("category_id","=","6")->get();
+
         $most_views=Product::orderBy("view_count","DESC")->limit(8)->get();
         $categories=Category::all();
         $products=Product::all();
@@ -55,7 +61,13 @@ class HomeController extends Controller
         $featureds=Product::orderBy("updated_at","DESC")->limit(8)->get();
         $lastest_1=Product::orderBy("created_at","DESC")->limit(3)->get();
         $lastest_2=Product::orderBy("created_at","DESC")->offset(3)->limit(3)->get();
+
         return view('frontend.home',[
+            "woman"=>$woman,
+            "man"=>$man,
+            "bag"=>$bag,
+            "shoes"=>$shoes,
+            "watches"=>$watches,
             "categories"=>$categories,
             "most_views"=>$most_views,
             "featureds"=>$featureds,
