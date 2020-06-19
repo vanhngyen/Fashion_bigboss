@@ -74,8 +74,8 @@
                         $productIds[] = $item["product_id"];
                     }
                     $grandTotal = 0;
-                    $products = \App\Product::find($productIds);
-                    foreach ($products as $p){
+                    $myproducts = \App\Product::find($productIds);
+                    foreach ($myproducts as $p){
                         foreach ($myCart as $item){
                             if($p->__get("id") == $item["product_id"])
                                 $grandTotal += ($p->__get("price")*$item["qty"]);

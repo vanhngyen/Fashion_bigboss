@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Cart;
+use App\Brand;
 use App\Category;
 use App\Events\OrderCreated;
 use App\Order;
@@ -83,11 +84,26 @@ class HomeController extends Controller
         $qty = $request->has("qty")&& (int)$request->get("qty")>0?(int)$request->get("qty"):1;
         $myCart = session()->has("my_cart")&& is_array(session("my_cart"))?session("my_cart"):[];
         $contain = false;
+        if(Auth::check()){
+            if(Cart::where("user_id",Auth::id())->where("is_checkout",true)->exists()){
+                $cart=Cart::where("user_id",Auth::id())->where("is_checkout",true)->first();
+            }else{
+                $cart=Cart::create([
+                    "user_id"=>Auth::id(),
+                    "is_checkout"=>true
+                ]);
+            }
+        }
         foreach ($myCart as $key=> $item){
             if($item["product_id"] == $product->__get("id")){
                // $item["qty"]+= $qty;
                 $myCart[$key]["qty"]+=$qty;
                 $contain = true;
+                if(Auth::check()){
+                    DB::table("cart_product")->where("cart_id",$cart->__get("id"))
+                        ->where("product_id",$item["product_id"])
+                        ->update(["qty"=>$myCart[$key]["qty"]]);
+                }
                 break;
             }
         }
