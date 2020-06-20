@@ -171,36 +171,31 @@ class HomeController extends Controller
                 }
             }
         }
-        $cart = Cart::where("user_id", Auth::id())
-            ->where("is_checkout", true)
-            ->with("getItems")
-            ->firstOrFail();
 //        dd($products);
         return view("frontend.cart", [
             "products" => $products,
             "grandTotal" => $grandTotal,
+        ]);
+    }
+
+    public function checkout()
+    {
+        $cart = Cart::where("user_id", Auth::id())
+            ->where("is_checkout", true)
+            ->with("getItems")
+            ->firstOrFail();
+        return view("frontend.checkout",[
             "cart" => $cart
         ]);
     }
 
-//    public function checkout()
-//    {
-//        $cart = Cart::where("user_id", Auth::id())
-//            ->where("is_checkout", true)
-//            ->with("getItems")
-//            ->firstOrFail();
-//        return view("frontend.cart",[
-//            "cart" => $cart
-//        ]);
-//    }
-
     public function placeOrder(Request $request)
     {
-//        $request->validate([
-//            "username" => "required",
-//            "address" => "required",
-//            "telephone" => "required",
-//        ]);
+        $request->validate([
+            "username" => "required",
+            "address" => "required",
+            "telephone" => "required",
+        ]);
         $cart = Cart::where("user_id", Auth::id())
             ->where("is_checkout", true)
             ->with("getItems")
@@ -232,6 +227,6 @@ class HomeController extends Controller
         } catch (\Exception $exception) {
 
         }
-        return redirect()->to("/");
+      return redirect()->to("/");
     }
 }
