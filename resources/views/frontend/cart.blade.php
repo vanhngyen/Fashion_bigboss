@@ -13,7 +13,8 @@
 
                     <div class="right-top-bar flex-w h-full">
                         @guest
-                            <a class="flex-c-m trans-04 p-lr-25" href="{{url("/login")}}"><i class="fa fa-user"></i> Login</a>
+                            <a class="flex-c-m trans-04 p-lr-25" href="{{url("/login")}}"><i class="fa fa-user"></i>
+                                Login</a>
                         @else
 
                             <a class="flex-c-m trans-04 p-lr-25" href="{{ route('logout') }}"
@@ -88,7 +89,7 @@
                     }
                 @endphp
 
-                    <!-- Icon header -->
+                <!-- Icon header -->
                     <div class="wrap-icon-header flex-w flex-r-m">
                         <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 js-show-modal-search">
                             <i class="zmdi zmdi-search"></i>
@@ -296,11 +297,13 @@
                     </div>
 
                     <div class="header-cart-buttons flex-w w-full">
-                        <a href="shoping-cart.html" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-r-8 m-b-10">
+                        <a href="shoping-cart.html"
+                           class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-r-8 m-b-10">
                             View Cart
                         </a>
 
-                        <a href="shoping-cart.html" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-b-10">
+                        <a href="shoping-cart.html"
+                           class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-b-10">
                             Check Out
                         </a>
                     </div>
@@ -326,9 +329,12 @@
 
 
     <!-- Shoping Cart -->
-    <form class="bg0 p-t-75 p-b-85" action="{{url("/checkout")}}" method="post">
-            @method("POST")
-            @csrf
+    {{--    @php--}}
+    {{--    dd($cart);--}}
+    {{--    @endphp--}}
+    <form class="bg0 p-t-75 p-b-85" action="{{url("checkout")}}" method="post">
+        @method("POST")
+        @csrf
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 col-xl-7 m-lr-auto m-b-50">
@@ -343,30 +349,29 @@
                                     <th class="column-5">Total</th>
                                 </tr>
                                 @foreach($products as $p)
-
-
                                     <tr class="table_row">
-                                    <td class="column-1">
-                                        <div class="how-itemcart1">
-                                            <img src="{{$p->getImage()}}" alt="IMG">
-                                        </div>
-                                    </td>
-                                    <td class="column-2">{{$p->__get("product_name")}}</td>
-                                    <td class="column-3">{{$p->getPrice()}}</td>
-                                    <td class="column-4">
-                                        <div class="wrap-num-product flex-w m-l-auto m-r-0">
-                                            <div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
-                                                <i class="fs-16 zmdi zmdi-minus"></i>
+                                        <td class="column-1">
+                                            <div class="how-itemcart1">
+                                                <img src="{{$p->getImage()}}" alt="IMG">
                                             </div>
-                                            <input class="mtext-104 cl3 txt-center num-product" type="number" name="num-product1" value="{{$p->cart_qty}}">
+                                        </td>
+                                        <td class="column-2">{{$p->__get("product_name")}}</td>
+                                        <td class="column-3">{{$p->getPrice()}}</td>
+                                        <td class="column-4">
+                                            <div class="wrap-num-product flex-w m-l-auto m-r-0">
+                                                <div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
+                                                    <i class="fs-16 zmdi zmdi-minus"></i>
+                                                </div>
+                                                <input class="mtext-104 cl3 txt-center num-product" type="number"
+                                                       name="num-product1" value="{{$p->cart_qty}}">
 
-                                            <div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m">
-                                                <i class="fs-16 zmdi zmdi-plus"></i>
+                                                <div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m">
+                                                    <i class="fs-16 zmdi zmdi-plus"></i>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </td>
-                                    <td class="column-5">{{$p->cart_qty * $p->__get("price")}}</td>
-                                </tr>
+                                        </td>
+                                        <td class="column-5">{{$p->cart_qty * $p->__get("price")}}</td>
+                                    </tr>
                                 @endforeach
 
                             </table>
@@ -374,14 +379,17 @@
 
                         <div class="flex-w flex-sb-m bor15 p-t-18 p-b-15 p-lr-40 p-lr-15-sm">
                             <div class="flex-w flex-m m-r-20 m-tb-5">
-                                <input class="stext-104 cl2 plh4 size-117 bor13 p-lr-20 m-r-10 m-tb-5" type="text" name="coupon" placeholder="Coupon Code">
+                                <input class="stext-104 cl2 plh4 size-117 bor13 p-lr-20 m-r-10 m-tb-5" type="text"
+                                       name="coupon" placeholder="Coupon Code">
 
-                                <div class="flex-c-m stext-101 cl2 size-118 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer m-tb-5">
+                                <div
+                                    class="flex-c-m stext-101 cl2 size-118 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer m-tb-5">
                                     Apply coupon
                                 </div>
                             </div>
 
-                            <div class="flex-c-m stext-101 cl2 size-119 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer m-tb-10">
+                            <div
+                                class="flex-c-m stext-101 cl2 size-119 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer m-tb-10">
                                 Update Cart
                             </div>
                         </div>
@@ -417,7 +425,8 @@
 
                             <div class="size-209 p-r-18 p-r-0-sm w-full-ssm">
                                 <p class="stext-111 cl6 p-t-2">
-                                    There are no shipping methods available. Please double check your address, or contact us if you need any help.
+                                    There are no shipping methods available. Please double check your address, or
+                                    contact us if you need any help.
                                 </p>
 
                                 <div class="p-t-15">
@@ -435,15 +444,18 @@
                                     </div>
 
                                     <div class="bor8 bg0 m-b-12">
-                                        <input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="state" placeholder="State /  country">
+                                        <input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="state"
+                                               placeholder="State /  country">
                                     </div>
 
                                     <div class="bor8 bg0 m-b-22">
-                                        <input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="postcode" placeholder="Postcode / Zip">
+                                        <input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="postcode"
+                                               placeholder="Postcode / Zip">
                                     </div>
 
                                     <div class="flex-w">
-                                        <div class="flex-c-m stext-101 cl2 size-115 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer">
+                                        <div
+                                            class="flex-c-m stext-101 cl2 size-115 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer">
                                             Update Totals
                                         </div>
                                     </div>
@@ -451,7 +463,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="flex-w flex-t p-t-27 p-b-33">
                             <div class="size-208">
 								<span class="mtext-101 cl2">
@@ -466,7 +477,8 @@
                             </div>
                         </div>
 
-                        <button type="submit" class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer">
+                        <button type="submit"
+                                class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer">
                             Proceed to Checkout
                         </button>
                     </div>

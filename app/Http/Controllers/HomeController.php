@@ -124,7 +124,7 @@ class HomeController extends Controller
             }
         }
         foreach ($myCart as $key => $item) {
-            if ($item["product_id"] == $product->__get("id")) {
+            if($item["product_id"] == $product->__get("id")) {
                 // $item["qty"]+= $qty;
                 $myCart[$key]["qty"] += $qty;
                 $contain = true;
@@ -141,6 +141,13 @@ class HomeController extends Controller
                 "product_id" => $product->__get("id"),
                 "qty" => $qty
             ];
+        }
+        if(Auth::check()){
+            DB::table("cart_product")->insert([
+                "qty"=>$qty,
+                "cart_id"=>$cart->__get("id"),
+                "product_id"=>$product->__get("id")
+            ]);
         }
         session(["my_cart" => $myCart]);
         return redirect()->to("/shopping-cart");
@@ -164,31 +171,36 @@ class HomeController extends Controller
                 }
             }
         }
-//        dd($products);
-        return view("frontend.cart", [
-            "products" => $products,
-            "grandTotal" => $grandTotal
-        ]);
-    }
-
-    public function checkout()
-    {
         $cart = Cart::where("user_id", Auth::id())
             ->where("is_checkout", true)
             ->with("getItems")
             ->firstOrFail();
-        return view("frontend.checkout", [
+//        dd($products);
+        return view("frontend.cart", [
+            "products" => $products,
+            "grandTotal" => $grandTotal,
             "cart" => $cart
         ]);
     }
 
+//    public function checkout()
+//    {
+//        $cart = Cart::where("user_id", Auth::id())
+//            ->where("is_checkout", true)
+//            ->with("getItems")
+//            ->firstOrFail();
+//        return view("frontend.cart",[
+//            "cart" => $cart
+//        ]);
+//    }
+
     public function placeOrder(Request $request)
     {
-        $request->validate([
-            "username" => "required",
-            "address" => "required",
-            "telephone" => "required",
-        ]);
+//        $request->validate([
+//            "username" => "required",
+//            "address" => "required",
+//            "telephone" => "required",
+//        ]);
         $cart = Cart::where("user_id", Auth::id())
             ->where("is_checkout", true)
             ->with("getItems")
