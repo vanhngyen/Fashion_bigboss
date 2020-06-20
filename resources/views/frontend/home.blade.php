@@ -36,27 +36,22 @@
 
                     <!-- Logo desktop -->
                     <a href="#" class="logo">
-                        <img src="images/icons/logo-01.png" alt="IMG-LOGO">
+                        <img src={{asset("images/icons/logo-01.png")}} alt="IMG-LOGO">
                     </a>
 
                     <!-- Menu desktop -->
                     <div class="menu-desktop">
                         <ul class="main-menu">
                             <li class="active-menu">
-                                <a href="index.html">Home</a>
-                                <ul class="sub-menu">
-                                    <li><a href="index.html">Homepage 1</a></li>
-                                    <li><a href="home-02.html">Homepage 2</a></li>
-                                    <li><a href="home-03.html">Homepage 3</a></li>
-                                </ul>
+                                <a href={{asset("index.html")}}>Home</a>
                             </li>
 
                             <li>
-                                <a href="product.html">Shop</a>
+                                <a href="{{asset("/category/{category:slug}")}}">Shop</a>
                             </li>
 
                             <li class="label1" data-label1="hot">
-                                <a href="shoping-cart.html">Features</a>
+                                <a href="{{"/shopping-cart"}}">Features</a>
                             </li>
 
                             <li>
@@ -211,7 +206,7 @@
         <div class="modal-search-header flex-c-m trans-04 js-hide-modal-search">
             <div class="container-search-header">
                 <button class="flex-c-m btn-hide-modal-search trans-04 js-hide-modal-search">
-                    <img src="images/icons/icon-close2.png" alt="CLOSE">
+                    <img src={{asset("images/icons/icon-close2.png")}} alt="CLOSE">
                 </button>
 
                 <form class="wrap-search-header flex-w p-l-15">
@@ -657,7 +652,7 @@
 
                             <div class="block2-txt flex-w flex-t p-t-14">
                                 <div class="block2-txt-child1 flex-col-l ">
-                                    <a href="product-detail.html"
+                                    <a href="{{"/product/{product:slug}"}}"
                                        class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
                                         {{$m->__get("product_name")}}
                                     </a>
@@ -669,10 +664,10 @@
 
                                 <div class="block2-txt-child2 flex-r p-t-3">
                                     <a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
-                                        <img class="icon-heart1 dis-block trans-04" src="images/icons/icon-heart-01.png"
+                                        <img class="icon-heart1 dis-block trans-04" src="{{asset("images/icons/icon-heart-01.png")}}"
                                              alt="ICON">
                                         <img class="icon-heart2 dis-block trans-04 ab-t-l"
-                                             src="images/icons/icon-heart-02.png" alt="ICON">
+                                             src="{{"images/icons/icon-heart-02.png"}}" alt="ICON">
                                     </a>
                                 </div>
                             </div>
@@ -694,7 +689,7 @@
 
                             <div class="block2-txt flex-w flex-t p-t-14">
                                 <div class="block2-txt-child1 flex-col-l ">
-                                    <a href="product-detail.html"
+                                    <a href="{{"/product/{product:slug}"}}"
                                        class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
                                         {{$w->__get("product_name")}}
                                     </a>
@@ -706,10 +701,10 @@
 
                                 <div class="block2-txt-child2 flex-r p-t-3">
                                     <a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
-                                        <img class="icon-heart1 dis-block trans-04" src="images/icons/icon-heart-01.png"
+                                        <img class="icon-heart1 dis-block trans-04" src="{{asset("images/icons/icon-heart-01.png")}}"
                                              alt="ICON">
                                         <img class="icon-heart2 dis-block trans-04 ab-t-l"
-                                             src="images/icons/icon-heart-02.png" alt="ICON">
+                                             src={{asset("images/icons/icon-heart-02.png")}} alt="ICON">
                                     </a>
                                 </div>
                             </div>
@@ -731,7 +726,7 @@
 
                             <div class="block2-txt flex-w flex-t p-t-14">
                                 <div class="block2-txt-child1 flex-col-l ">
-                                    <a href="product-detail.html"
+                                    <a href="{{"/product/{product:slug}"}}"
                                        class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
                                         {{$s->__get("product_name")}}
                                     </a>
@@ -743,10 +738,10 @@
 
                                 <div class="block2-txt-child2 flex-r p-t-3">
                                     <a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
-                                        <img class="icon-heart1 dis-block trans-04" src="images/icons/icon-heart-01.png"
+                                        <img class="icon-heart1 dis-block trans-04" src="{{asset("images/icons/icon-heart-01.png")}}"
                                              alt="ICON">
                                         <img class="icon-heart2 dis-block trans-04 ab-t-l"
-                                             src="images/icons/icon-heart-02.png" alt="ICON">
+                                             src="{{"images/icons/icon-heart-02.png"}}" alt="ICON">
                                     </a>
                                 </div>
                             </div>
@@ -768,7 +763,7 @@
 
                             <div class="block2-txt flex-w flex-t p-t-14">
                                 <div class="block2-txt-child1 flex-col-l ">
-                                    <a href="product-detail.html"
+                                    <a href="{{"/product/{product:slug}"}}"
                                        class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
                                         {{$b->__get("product_name")}}
                                     </a>
@@ -780,10 +775,10 @@
 
                                 <div class="block2-txt-child2 flex-r p-t-3">
                                     <a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
-                                        <img class="icon-heart1 dis-block trans-04" src="images/icons/icon-heart-01.png"
+                                        <img class="icon-heart1 dis-block trans-04" src="{{"images/icons/icon-heart-01.png"}}"
                                              alt="ICON">
                                         <img class="icon-heart2 dis-block trans-04 ab-t-l"
-                                             src="images/icons/icon-heart-02.png" alt="ICON">
+                                             src="{{asset("images/icons/icon-heart-02.png")}}" alt="ICON">
                                     </a>
                                 </div>
                             </div>
@@ -805,7 +800,7 @@
 
                             <div class="block2-txt flex-w flex-t p-t-14">
                                 <div class="block2-txt-child1 flex-col-l ">
-                                    <a href="product-detail.html"
+                                    <a href="{{asset("/product/{product:slug}")}}"
                                        class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
                                         {{$w->__get("product_name")}}
                                     </a>
@@ -817,10 +812,10 @@
 
                                 <div class="block2-txt-child2 flex-r p-t-3">
                                     <a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
-                                        <img class="icon-heart1 dis-block trans-04" src="images/icons/icon-heart-01.png"
+                                        <img class="icon-heart1 dis-block trans-04" src="{{asset("images/icons/icon-heart-01.png")}}"
                                              alt="ICON">
                                         <img class="icon-heart2 dis-block trans-04 ab-t-l"
-                                             src="images/icons/icon-heart-02.png" alt="ICON">
+                                             src="{{asset("images/icons/icon-heart-02.png")}}" alt="ICON">
                                     </a>
                                 </div>
                             </div>
