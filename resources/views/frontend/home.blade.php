@@ -47,7 +47,7 @@
                             </li>
 
                             <li>
-                                <a href="/category">Shop</a>
+                                <a href="/">Shop</a>
                             </li>
 
                             <li class="label1" data-label1="hot">
