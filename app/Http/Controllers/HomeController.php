@@ -165,6 +165,13 @@ class HomeController extends Controller
         session(["my_cart" => $myCart]);
         return redirect()->to("/shopping-cart");
     }
+    public function postSearch(Request $request)
+    {
+        $searchProducts = Product::whereRaw('LOWER("product_name") like ?','%'.strtolower($request->search).'%')->get();
+        return view("frontend.search", [
+            "searchProducts" => $searchProducts,
+        ]);
+    }
 
     public function shoppingCart()
     {
