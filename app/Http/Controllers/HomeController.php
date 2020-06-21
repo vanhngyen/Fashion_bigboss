@@ -238,4 +238,12 @@ class HomeController extends Controller
             $exception->getMessage();
         }
     }
+    //function Search
+    public function postSearch(Request $request)
+    {
+        $searchProducts = Product::whereRaw('LOWER("product_name") like ?','%'.strtolower($request->search).'%')->get();
+        return view("frontend.search", [
+            "searchProducts" => $searchProducts,
+        ]);
+    }
 }
