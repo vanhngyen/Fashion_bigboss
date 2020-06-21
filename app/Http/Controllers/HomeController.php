@@ -37,10 +37,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $u=Auth::user();
-        $u->role=User::ADMIN_ROLE;
-        $u->save();
-       // if (!Cache::has("home_page")) {
+
         if(!Cache::has("home_page")) {
             $woman = Product::with("Category")->with("Brand")->where("category_id", "=", "2")->get();
             $man = Product::with("Category")->with("Brand")->where("category_id", "=", "1")->get();
