@@ -37,6 +37,7 @@ class HomeController extends Controller
      */
     public function index()
     {
+
             $woman = Product::with("Category")->with("Brand")->where("category_id", "=", "2")->get();
             $man = Product::with("Category")->with("Brand")->where("category_id", "=", "1")->get();
             $shoes = Product::with("Category")->with("Brand")->where("category_id", "=", "5")->get();
@@ -78,8 +79,12 @@ class HomeController extends Controller
             //   Cache::put("home_page",$view,$now->addMinute(20));
             //  }
             //  return Cache::get("home_page");
-//            return $view;
-//            Cache::put("home_page",$view,$now->addMinutes(20));
+            return $view;
+            Cache::put("home_page",$view,$now->addMinutes(20));
+            ///
+        }
+        return Cache::get("home_page");
+
     }
 
     public function category(Category $category)
