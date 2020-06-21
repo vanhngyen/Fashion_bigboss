@@ -16,7 +16,7 @@
                 </div>
                 <label>Product Image</label>
                 <div class="form-group">
-                        <input class="form-control" name="brand_image" type="file" placeholder="Brand image">
+                        <input class="form-control" name="brand_image" type="text" placeholder="Brand image">
                 </div>
             </div>
             <!-- /.card-body -->
