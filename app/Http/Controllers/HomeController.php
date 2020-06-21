@@ -36,44 +36,48 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $woman = Product::with("Category")->with("Brand")->where("category_id", "=", "2")->get();
-        $man = Product::with("Category")->with("Brand")->where("category_id", "=", "1")->get();
-        $shoes = Product::with("Category")->with("Brand")->where("category_id", "=", "5")->get();
-        $bag = Product::with("Category")->with("Brand")->where("category_id", "=", "4")->get();
-        $watches = Product::with("Category")->with("Brand")->where("category_id", "=", "6")->get();
+        if (!Cache::has("home_page")) {
+            $woman = Product::with("Category")->with("Brand")->where("category_id", "=", "2")->get();
+            $man = Product::with("Category")->with("Brand")->where("category_id", "=", "1")->get();
+            $shoes = Product::with("Category")->with("Brand")->where("category_id", "=", "5")->get();
+            $bag = Product::with("Category")->with("Brand")->where("category_id", "=", "4")->get();
+            $watches = Product::with("Category")->with("Brand")->where("category_id", "=", "6")->get();
 
-        $most_views = Product::orderBy("view_count", "DESC")->limit(8)->get();
-        $categories = Category::all();
-        $products = Product::all();
-        $brands = Brand::all();
-        foreach ($products as $p) {
-            $slug = \Illuminate\Support\Str::slug($p->__get("product_name"));
-            $p->slug = $slug = $slug . $p->__get("id");
-            $p->save();
-            //$p->update(["slug"=>$slug.$p->__get("id");
+            $most_views = Product::orderBy("view_count", "DESC")->limit(8)->get();
+            $categories = Category::all();
+            $products = Product::all();
+            $brands = Brand::all();
+            foreach ($products as $p) {
+                $slug = \Illuminate\Support\Str::slug($p->__get("product_name"));
+                $p->slug = $slug = $slug . $p->__get("id");
+                $p->save();
+                //$p->update(["slug"=>$slug.$p->__get("id");
+            }
+            foreach ($categories as $p) {
+                $slug = \Illuminate\Support\Str::slug($p->__get("category_name"));
+                $p->slug = $slug = $slug . $p->__get("id");
+                $p->save();
+                //$p->update(["slug"=>$slug.$p->__get("id");
+            }
+            $featureds = Product::orderBy("updated_at", "DESC")->limit(8)->get();
+            $lastest_1 = Product::orderBy("created_at", "DESC")->limit(3)->get();
+            $lastest_2 = Product::orderBy("created_at", "DESC")->offset(3)->limit(3)->get();
+            $view = view('frontend.home', [
+                "woman" => $woman,
+                "man" => $man,
+                "bag" => $bag,
+                "shoes" => $shoes,
+                "watches" => $watches,
+                "categories" => $categories,
+                "most_views" => $most_views,
+                "featureds" => $featureds,
+                "lastest_1" => $lastest_1,
+                "lastest_2" => $lastest_2,
+            ])->render();
+            $now=Carbon::now();
+            Cache::put("home_page",$view,$now->addMinute(20));
         }
-        foreach ($categories as $p) {
-            $slug = \Illuminate\Support\Str::slug($p->__get("category_name"));
-            $p->slug = $slug = $slug . $p->__get("id");
-            $p->save();
-            //$p->update(["slug"=>$slug.$p->__get("id");
-        }
-        $featureds = Product::orderBy("updated_at", "DESC")->limit(8)->get();
-        $lastest_1 = Product::orderBy("created_at", "DESC")->limit(3)->get();
-        $lastest_2 = Product::orderBy("created_at", "DESC")->offset(3)->limit(3)->get();
-
-        return view('frontend.home', [
-            "woman" => $woman,
-            "man" => $man,
-            "bag" => $bag,
-            "shoes" => $shoes,
-            "watches" => $watches,
-            "categories" => $categories,
-            "most_views" => $most_views,
-            "featureds" => $featureds,
-            "lastest_1" => $lastest_1,
-            "lastest_2" => $lastest_2,
-        ]);
+       return Cache::get("home_page");
     }
 
     public function category(Category $category)
