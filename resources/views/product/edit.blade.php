@@ -35,7 +35,7 @@
                     <label>Product Name</label>
                     <div class="form-group">
                         <div class="form-line">
-                            <input class="form-control @error("product_name") is-invalid @enderror" type="text" name="product_name" placeholder="Enter Name"/>
+                            <input class="form-control value="{{$product->__get("product_name")}}" @error("product_name") is-invalid @enderror" type="text" name="product_name" placeholder="Enter Name"/>
                             @error("product_name")
                             <span class="error invalid-feedback">{{$message}}</span>
                             @enderror
@@ -44,13 +44,13 @@
                     <label>Product Image</label>
                     <div class="form-group">
                         <div class="form-line">
-                            <input class="form-control" name="product_image" type="text" placeholder="Product image">
+                            <input class="form-control" value="{{$product->__get("product_image")}}" name="product_image" type="text" placeholder="Product image">
                         </div>
                     </div>
                     <label>Product Description</label>
                     <div class="form-group">
                         <div class="form-line">
-                                         <textarea name="product_desc" placeholder="Description.." class="form-control @error("product_desc") is-invalid @enderror">
+                                         <textarea name="product_desc" value="{{$product->__get("product_desc")}}" placeholder="Description.." class="form-control @error("product_desc") is-invalid @enderror">
                             </textarea>
                             @error("product_desc")
                             <span class="error invalid-feedback">{{$message}}</span>
@@ -60,7 +60,7 @@
                     <label>Price</label>
                     <div class="form-group">
                         <div class="form-line">
-                            <input class="form-control @error("price") is-invalid @enderror" type="number" name="price" placeholder="Price.."/>
+                            <input class="form-control value="{{$product->getPrice()}}" @error("price") is-invalid @enderror" type="number" name="price" placeholder="Price.."/>
                             @error("price")
                             <span class="error invalid-feedback">{{$message}}</span>
                             @enderror
