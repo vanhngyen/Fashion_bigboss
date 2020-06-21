@@ -44,7 +44,7 @@
                     <label>Product Image</label>
                     <div class="form-group">
                         <div class="form-line">
-                            <input class="form-control" name="product_image" type="file" placeholder="Product image">
+                            <input class="form-control" name="product_image" type="text" placeholder="Product image">
                         </div>
                     </div>
                     <label>Product Description</label>
