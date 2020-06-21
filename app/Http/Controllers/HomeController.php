@@ -223,7 +223,6 @@ class HomeController extends Controller
                 ]);
             }
             $currentUser = Auth::user();
-            dd($currentUser);
             Mail::send('mail.checkout-form',array("cart" => $cart->getItems),function ($message){
                 $message->to(Auth::user()->__get("email"),Auth::user()->__get("name"))->subject('Bạn Vừa Nhận Được Đơn Hàng Từ Fashion BigBoss'.Auth::user()->__get("name"));
             });
