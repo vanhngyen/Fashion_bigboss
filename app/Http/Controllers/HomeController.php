@@ -75,14 +75,9 @@ class HomeController extends Controller
                 "lastest_1" => $lastest_1,
                 "lastest_2" => $lastest_2,
             ]);
-//            $now = Carbon::now();
-            //   Cache::put("home_page",$view,$now->addMinute(20));
-            //  }
-            //  return Cache::get("home_page");
-            return $view;
-            Cache::put("home_page",$view,$now->addMinutes(20));
-            ///
-        }
+        $now = Carbon::now();
+        Cache::put("home_page",$view,$now->addMinutes(20));
+        //}
         return Cache::get("home_page");
 
     }
