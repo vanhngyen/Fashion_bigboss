@@ -46,23 +46,23 @@
                             </li>
 
                             <li class="active-menu">
-                                <a href="{{asset("/product/{product:slug}")}}">Shop</a>
+                                <a href="/product">Shop</a>
                             </li>
 
                             <li class="label1" data-label1="hot">
-                                <a href="shoping-cart.html">Features</a>
+                                <a href="/feature">Features</a>
                             </li>
 
                             <li>
-                                <a href="blog.html">Blog</a>
+                                <a href="/blog">Blog</a>
                             </li>
 
                             <li>
-                                <a href="about.html">About</a>
+                                <a href="/about">About</a>
                             </li>
 
                             <li>
-                                <a href="contact.html">Contact</a>
+                                <a href="/contact">Contact</a>
                             </li>
                         </ul>
                     </div>
