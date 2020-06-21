@@ -24,7 +24,7 @@ class ProductController extends Controller
 
     public function saveProduct(Request $request){
         $request->validate([
-            "product_name"=>"required|string|min:6|unique:products",
+            "product_name"=>"required|string|min:2|unique:products",
             "product_desc"=>"required|string|min:2|unique:products",
             "price"=>"required|numeric|min:0",
             "qty"=>"required|numeric|min:1",
