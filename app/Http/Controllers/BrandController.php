@@ -22,7 +22,7 @@ class BrandController extends Controller
 
     public function saveBrand(Request $request){
         $request->validate([
-            "brands_name"=>"required|string|min:6|unique:brands",
+            "brands_name"=>"required|string|min:2|unique:brands",
         ]);
 
         try {
@@ -55,7 +55,7 @@ class BrandController extends Controller
     public function updateBrand($id,Request $request){
         $brand = Brand::findOrFail($id);
         $request->validate([
-            "brands_name"=>"required|min:6|unique:brands,brands_name,{$id}"
+            "brands_name"=>"required|min:2|unique:brands,brands_name,{$id}"
         ]);
         try{
             $brand_image=$brand->get("brand_image");

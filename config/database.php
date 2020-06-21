@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
+    'default' => env('DB_CONNECTION', 'mysql'),//'pgsql'env('DB_CONNECTION', 'mysql'),
 
     /*
     |--------------------------------------------------------------------------
@@ -65,20 +65,12 @@ return [
 
         'pgsql' => [
             'driver' => 'pgsql',
-//            'url' => env('DATABASE_URL'),
-//            'host' => env('DB_HOST', '127.0.0.1'),
-//            'port' => env('DB_PORT', '5432'),
-//            'database' => env('DB_DATABASE', 'forge'),
-//            'username' => env('DB_USERNAME', 'forge'),
-//            'password' => env('DB_PASSWORD', ''),
-            //'url' => env('DATABASE_URL'),
-            'host' => 'ec2-52-44-55-63.compute-1.amazonaws.com',//env('DB_HOST', '127.0.0.1'),
+            //'url' => 'postgres://aaymbcjwgpkpmg:ece97038105d4f1e3b23aca0fd95c5e943b655b1d95b12d992b54718c583e72c@ec2-34-198-243-120.compute-1.amazonaws.com:5432/ddlbjm7c2unrrl',//env('DATABASE_URL'),
+            'host' =>'ec2-35-172-73-125.compute-1.amazonaws.com',//env('DB_HOST', '127.0.0.1'),
             'port' => '5432',//env('DB_PORT', '5432'),
-            'database' => 'dbf6nvp1ejkr93',//env('DB_DATABASE', 'forge'),
-            'username' => 'ccrcixbxucjxjb',//env('DB_USERNAME', 'forge'),
-            'password' => '8aac08ad3cbf002b5937a2224b9a6c28dd743c8a2c8948d37ff25f6e744d3022',//env('DB_PASSWORD', ''),
-
-
+            'database'=>'dd7vqi9f69bdl9', //env('DB_DATABASE', 'forge'),
+            'username' =>'vnfyrmyepijjpa', //env('DB_USERNAME', 'forge'),
+            'password' =>'615b672d9e5ff6682c6f3a8f9a39e4e5f0d627e2bd3c75de071d83066458f6a4',//env('DB_PASSWORD', ''),
             'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,

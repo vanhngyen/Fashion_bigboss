@@ -45,10 +45,10 @@
                                 <td>{{$category->__get("created_at")}}</td>
                                 <td>{{$category->__get("updated_at")}}</td>
                                 <td>
-                                    <a href="{{url("/edit-category/{$category->__get("id")}")}}" class="btn btn-warning waves-effect">Edit</a>
+                                    <a href="{{url("admin/edit-category/{$category->__get("id")}")}}" class="btn btn-warning waves-effect">Edit</a>
                                 </td>
                                 <td>
-                                    <form action="{{url("/delete-category/{$category->__get("id")}")}}" method="post">
+                                    <form action="{{url("admin/delete-category/{$category->__get("id")}")}}" method="post">
                                         @method("DELETE")
                                         @csrf
                                         <button type="submit" onclick="return confirm('Are you sure?');" class="btn btn-danger waves-effect">Delete</button>
@@ -57,6 +57,7 @@
                             </tr>
                         @endforeach
                         </tbody>
+{{--                        ////--}}
                     </table>
                     {!! $categories ->links() !!}
                 </div>

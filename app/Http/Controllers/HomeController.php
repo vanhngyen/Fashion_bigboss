@@ -14,6 +14,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 use Psy\Util\Str;
 
 
@@ -24,10 +25,10 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+//    public function __construct()
+//    {
+//        $this->middleware('auth');
+//    }
 
     /**
      * Show the application dashboard.
@@ -36,6 +37,7 @@ class HomeController extends Controller
      */
     public function index()
     {
+
             $woman = Product::with("Category")->with("Brand")->where("category_id", "=", "2")->get();
             $man = Product::with("Category")->with("Brand")->where("category_id", "=", "1")->get();
             $shoes = Product::with("Category")->with("Brand")->where("category_id", "=", "5")->get();
@@ -77,8 +79,12 @@ class HomeController extends Controller
             //   Cache::put("home_page",$view,$now->addMinute(20));
             //  }
             //  return Cache::get("home_page");
-//            return $view;
-//            Cache::put("home_page",$view,$now->addMinutes(20));
+            return $view;
+            Cache::put("home_page",$view,$now->addMinutes(20));
+            ///
+        }
+        return Cache::get("home_page");
+
     }
 
     public function category(Category $category)
@@ -227,11 +233,14 @@ class HomeController extends Controller
                     "qty" => $item->pivot->__get("qty")
                 ]);
             }
+            $currentUser = Auth::user();
+//            dd($currentUser);
+            Mail::send('mail.checkout-form',array("cart" => $cart->getItems),function ($message){
+                $message->to(Auth::user()->__get("email"),Auth::user()->__get("name"))->subject('Bạn Vừa Nhận Được Đơn Hàng Từ Fashion BigBoss'.Auth::user()->__get("name"));
+            });
             event(new OrderCreated($order));
-
         } catch (\Exception $exception) {
-
+            $exception->getMessage();
         }
-      return redirect()->to("/");
     }
 }

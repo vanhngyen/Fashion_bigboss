@@ -42,7 +42,7 @@ class CategoryController extends Controller
     public function updateCategory($id,Request $request){
         $category = Category::findOrFail($id);
         $request->validate([
-            "category_name"=> "required|min:6|unique:categories,category_name,{$id}"
+            "category_name"=> "required|min:2|unique:categories,category_name,{$id}"
         ]);
         try {
             $category->update([
