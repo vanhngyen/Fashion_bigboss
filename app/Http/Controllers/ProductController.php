@@ -80,21 +80,21 @@ class ProductController extends Controller
         ]);
 
         try {
-            $product_image = $product->get("product_image");
-            if($request->hasFile("product_image")){
-                $file = $request->file("product_image");
-                $allow = ["png","jpg","jpeg","gif"];
-                $extName = $file->getClientOriginalExtension();
-                if(in_array($extName,$allow)){
-                    $fileName = time().$file->getClientOriginalName(); //  lấy tên gốc original của file gửi lên từ client
-                    $file->move(public_path("media"),$fileName); // đẩy file vào thư mục media với tên là fileName
-                    //convert string to ProductImage
-                    $product_image = "media/".$fileName; // lấy nguồn file
-                }
-            }
+//            $product_image = $product->get("product_image");
+//            if($request->hasFile("product_image")){
+//                $file = $request->file("product_image");
+//                $allow = ["png","jpg","jpeg","gif"];
+//                $extName = $file->getClientOriginalExtension();
+//                if(in_array($extName,$allow)){
+//                    $fileName = time().$file->getClientOriginalName(); //  lấy tên gốc original của file gửi lên từ client
+//                    $file->move(public_path("media"),$fileName); // đẩy file vào thư mục media với tên là fileName
+//                    //convert string to ProductImage
+//                    $product_image = "media/".$fileName; // lấy nguồn file
+//                }
+      //      }
             $product->update([
                 "product_name"=>$request->get("product_name"),
-                "product_image"=>$product_image,
+                "product_image"=>$request->get("product_image"),
                 "product_desc"=>$request->get("product_desc"),
                 "price"=>$request->get("price"),
                 "qty"=>$request->get("qty"),
