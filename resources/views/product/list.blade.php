@@ -48,7 +48,7 @@
                             <tr>
                                 <td>{{$product->__get("id")}}</td>
                                 <td>{{$product->__get("product_name")}}</td>
-                                <td><img src="{{$product->getImage()}}" width="50" height="50"/></td>
+                                <td><img src="{{$product->__get('product_image')}}" width="50" height="50"/></td>
                                 <td>{{$product->__get("product_desc")}}</td>
                                 <td>{{number_format($product->__get("price"))}}$</td>
                                 <td>{{$product->__get("qty")}}</td>

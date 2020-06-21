@@ -8,6 +8,12 @@
     <title>Document</title>
 </head>
 <body>
-     ten san pham {{$cart->__get("product_name")}}
+<p>Bạn Vừa Nhận Được Đơn Hàng Từ Fashion BigBoss</p>
+@foreach($cart as $c)
+    {{$c->__get("product_name")}}
+    {{$c->__get("price")}}
+    {{$user->__get("name")}}
+    {{$user->__get("email")}}
+@endforeach
 </body>
 </html>

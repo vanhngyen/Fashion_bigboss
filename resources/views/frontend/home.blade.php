@@ -58,6 +58,7 @@
                                 <a href="/blog">Blog</a>
                             </li>
 {{--kdls--}}
+{{--                            //--}}
                             <li>
                                 <a href="/about">About</a>
                             </li>
@@ -209,8 +210,10 @@
                     <img src={{asset("images/icons/icon-close2.png")}} alt="CLOSE">
                 </button>
 
-                <form class="wrap-search-header flex-w p-l-15">
-                    <button class="flex-c-m trans-04">
+                <form action="/search" method="post" class="wrap-search-header flex-w p-l-15">
+                    @method("POST")
+                    @csrf
+                    <button type="submit" class="flex-c-m trans-04">
                         <i class="zmdi zmdi-search"></i>
                     </button>
                     <input class="plh3" type="text" name="search" placeholder="Search...">
@@ -638,13 +641,13 @@
             </div>
             <div class="row isotope-grid">
                 @foreach($man as $m)
-                    <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item man">
+                    <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item Man">
                         <!-- Block2 -->
                         <div class="block2">
                             <div class="block2-pic hov-img0">
                                 <img src="{{$m->getImage()}}" alt="IMG-PRODUCT">
 
-                                <a href="#"
+                                <a href="javascript:void(0);" onclick="addToCart({{$m->__get("id")}});"
                                    class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
                                     Quick View
                                 </a>
@@ -675,13 +678,13 @@
                     </div>
                 @endforeach
                 @foreach($woman as $w)
-                    <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item woman">
+                    <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item Woman">
                         <!-- Block2 -->
                         <div class="block2">
                             <div class="block2-pic hov-img0">
                                 <img src="{{$w->getImage()}}" alt="IMG-PRODUCT">
 
-                                <a href="#"
+                                <a href="javascript:void(0);" onclick="addToCart({{$w->__get("id")}});"
                                    class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
                                     Quick View
                                 </a>
@@ -712,13 +715,13 @@
                     </div>
                 @endforeach
                 @foreach($shoes as $s)
-                    <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item shoes">
+                    <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item Shoes">
                         <!-- Block2 -->
                         <div class="block2">
                             <div class="block2-pic hov-img0">
                                 <img src="{{$s->getImage()}}" alt="IMG-PRODUCT">
 
-                                <a href="#"
+                                <a href="javascript:void(0);" onclick="addToCart({{$s->__get("id")}});"
                                    class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
                                     Quick View
                                 </a>
@@ -749,14 +752,13 @@
                     </div>
                 @endforeach
                 @foreach($bag as $b)
-                    <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item bag">
+                    <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item Bag">
                         <!-- Block2 -->
                         <div class="block2">
                             <div class="block2-pic hov-img0">
                                 <img src="{{$b->getImage()}}" alt="IMG-PRODUCT">
 
-                                <a href="#"
-                                   class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+                                <a href="javascript:void(0);" onclick="addToCart({{$b->__get("id")}});" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
                                     Quick View
                                 </a>
                             </div>
@@ -786,13 +788,13 @@
                     </div>
                 @endforeach
                 @foreach($watches as $w)
-                    <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item watches">
+                    <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item Watches">
                         <!-- Block2 -->
                         <div class="block2">
                             <div class="block2-pic hov-img0">
                                 <img src="{{$w->getImage()}}" alt="IMG-PRODUCT">
 
-                                <a href="#"
+                                <a href="javascript:void(0);" onclick="addToCart({{$w->__get("id")}});"
                                    class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
                                     Quick View
                                 </a>
