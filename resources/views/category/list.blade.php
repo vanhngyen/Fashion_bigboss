@@ -57,6 +57,7 @@
                             </tr>
                         @endforeach
                         </tbody>
+{{--                        ////--}}
                     </table>
                     {!! $categories ->links() !!}
                 </div>
