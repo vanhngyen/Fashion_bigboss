@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
 use Psy\Util\Str;
+use Illuminate\Support\Facades\Mail;
 
 
 class HomeController extends Controller
