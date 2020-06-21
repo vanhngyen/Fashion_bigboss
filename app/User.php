@@ -18,7 +18,10 @@ class User extends Authenticatable
     protected $table="users";
 
     protected $fillable = [
-        'name','image', 'email','telephone','address', 'password',
+        'name','image', 'email','telephone','address', 'password','role',
+    ];
+    protected  $attributes = [
+        "role" => 1
     ];
     public const ADMIN_ROLE=1;
     public const USER_ROLE=0;
