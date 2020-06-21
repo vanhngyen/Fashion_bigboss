@@ -36,11 +36,11 @@ return [
     'mailers' => [
         'smtp' => [
             'transport' => 'smtp',
-            'host' => 'smtp.gmail.com',
+            'host' => 'smtp.gmail.com',//env('MAIL_HOST', 'smtp.mailgun.org'),
             'port' => '587',
             'encryption' => 'tls',
-            'username' => env('MAIL_USERNAME'),//'nhanntth1906004@fpt.edu.vn',
-            'password' => env('MAIL_PASSWORD'),//'npwpuwfmpaohawup',
+            'username' => 'thangsteam3@gmail.com',
+            'password' => 'fpngnzjthekvoasn',
             'timeout' => null,
             'auth_mode' => null,
         ],

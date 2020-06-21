@@ -6,6 +6,7 @@ use App\Cart;
 use App\Brand;
 use App\Category;
 use App\Events\OrderCreated;
+use App\Mail\SendMail;
 use App\Order;
 use App\Product;
 use App\User;
@@ -14,8 +15,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Mail;
 use Psy\Util\Str;
+use Illuminate\Support\Facades\Mail;
 
 
 class HomeController extends Controller
@@ -25,10 +26,7 @@ class HomeController extends Controller
      *
      * @return void
      */
-//    public function __construct()
-//    {
-//        $this->middleware('auth');
-//    }
+
 
     /**
      * Show the application dashboard.
@@ -38,48 +36,43 @@ class HomeController extends Controller
     public function index()
     {
 
-            $woman = Product::with("Category")->with("Brand")->where("category_id", "=", "2")->get();
-            $man = Product::with("Category")->with("Brand")->where("category_id", "=", "1")->get();
-            $shoes = Product::with("Category")->with("Brand")->where("category_id", "=", "5")->get();
-            $bag = Product::with("Category")->with("Brand")->where("category_id", "=", "4")->get();
-            $watches = Product::with("Category")->with("Brand")->where("category_id", "=", "6")->get();
+        $woman = Product::with("Category")->with("Brand")->where("category_id", "=", "2")->get();
+        $man = Product::with("Category")->with("Brand")->where("category_id", "=", "1")->get();
+        $shoes = Product::with("Category")->with("Brand")->where("category_id", "=", "5")->get();
+        $bag = Product::with("Category")->with("Brand")->where("category_id", "=", "4")->get();
+        $watches = Product::with("Category")->with("Brand")->where("category_id", "=", "6")->get();
 
-            $most_views = Product::orderBy("view_count", "DESC")->limit(8)->get();
-            $categories = Category::all();
-            $products = Product::all();
-            $brands = Brand::all();
-            foreach ($products as $p) {
-                $slug = \Illuminate\Support\Str::slug($p->__get("product_name"));
-                $p->slug = $slug = $slug . $p->__get("id");
-                $p->save();
-                //$p->update(["slug"=>$slug.$p->__get("id");
-            }
-            foreach ($categories as $p) {
-                $slug = \Illuminate\Support\Str::slug($p->__get("category_name"));
-                $p->slug = $slug = $slug . $p->__get("id");
-                $p->save();
-                //$p->update(["slug"=>$slug.$p->__get("id");
-            }
-            $featureds = Product::orderBy("updated_at", "DESC")->limit(8)->get();
-            $lastest_1 = Product::orderBy("created_at", "DESC")->limit(3)->get();
-            $lastest_2 = Product::orderBy("created_at", "DESC")->offset(3)->limit(3)->get();
-            return view('frontend.home', [
-                "woman" => $woman,
-                "man" => $man,
-                "bag" => $bag,
-                "shoes" => $shoes,
-                "watches" => $watches,
-                "categories" => $categories,
-                "most_views" => $most_views,
-                "featureds" => $featureds,
-                "lastest_1" => $lastest_1,
-                "lastest_2" => $lastest_2,
-            ]);
-        $now = Carbon::now();
-        Cache::put("home_page",$view,$now->addMinutes(20));
-        //}
-        return Cache::get("home_page");
-
+        $most_views = Product::orderBy("view_count", "DESC")->limit(8)->get();
+        $categories = Category::all();
+        $products = Product::all();
+        $brands = Brand::all();
+        foreach ($products as $p) {
+            $slug = \Illuminate\Support\Str::slug($p->__get("product_name"));
+            $p->slug = $slug = $slug . $p->__get("id");
+            $p->save();
+//$p->update(["slug"=>$slug.$p->__get("id");
+        }
+        foreach ($categories as $p) {
+            $slug = \Illuminate\Support\Str::slug($p->__get("category_name"));
+            $p->slug = $slug = $slug . $p->__get("id");
+            $p->save();
+//$p->update(["slug"=>$slug.$p->__get("id");
+        }
+        $featureds = Product::orderBy("updated_at", "DESC")->limit(8)->get();
+        $lastest_1 = Product::orderBy("created_at", "DESC")->limit(3)->get();
+        $lastest_2 = Product::orderBy("created_at", "DESC")->offset(3)->limit(3)->get();
+        return view('frontend.home', [
+            "woman" => $woman,
+            "man" => $man,
+            "bag" => $bag,
+            "shoes" => $shoes,
+            "watches" => $watches,
+            "categories" => $categories,
+            "most_views" => $most_views,
+            "featureds" => $featureds,
+            "lastest_1" => $lastest_1,
+            "lastest_2" => $lastest_2,
+        ]);
     }
 
     public function category(Category $category)
@@ -130,8 +123,8 @@ class HomeController extends Controller
             }
         }
         foreach ($myCart as $key => $item) {
-            if($item["product_id"] == $product->__get("id")) {
-                // $item["qty"]+= $qty;
+            if ($item["product_id"] == $product->__get("id")) {
+                $item["qty"] += $qty;
                 $myCart[$key]["qty"] += $qty;
                 $contain = true;
                 if (Auth::check()) {
@@ -148,11 +141,11 @@ class HomeController extends Controller
                 "qty" => $qty
             ];
         }
-        if(Auth::check()){
+        if (Auth::check()) {
             DB::table("cart_product")->insert([
-                "qty"=>$qty,
-                "cart_id"=>$cart->__get("id"),
-                "product_id"=>$product->__get("id")
+                "qty" => $qty,
+                "cart_id" => $cart->__get("id"),
+                "product_id" => $product->__get("id")
             ]);
         }
         session(["my_cart" => $myCart]);
@@ -173,11 +166,11 @@ class HomeController extends Controller
                 if ($p->__get("id") == $item["product_id"]) {
                     $grandTotal += ($p->__get("price") * $item["qty"]);
                     $p->cart_qty = $item["qty"];
-//                    dd($p);
+// dd($p);
                 }
             }
         }
-//        dd($products);
+// dd($products);
         return view("frontend.cart", [
             "products" => $products,
             "grandTotal" => $grandTotal,
@@ -190,25 +183,9 @@ class HomeController extends Controller
             ->where("is_checkout", true)
             ->with("getItems")
             ->firstOrFail();
-        return view("frontend.checkout",[
+        return view("frontend.checkout", [
             "cart" => $cart
         ]);
-    }
-
-    public function contact(){
-        return view("frontend.contact");
-    }
-
-    public function blog(){
-        return view("frontend.blog");
-    }
-
-    public function about(){
-        return view("frontend.about");
-    }
-
-    public function admin(){
-        return view("admin");
     }
 
     public function placeOrder(Request $request)
@@ -216,8 +193,7 @@ class HomeController extends Controller
         $request->validate([
             "username" => "required",
             "address" => "required",
-            "telephone" => "required",
-        ]);
+            "telephone" => "required",]);
         $cart = Cart::where("user_id", Auth::id())
             ->where("is_checkout", true)
             ->with("getItems")
@@ -244,16 +220,20 @@ class HomeController extends Controller
                     "qty" => $item->pivot->__get("qty")
                 ]);
             }
-            $currentUser = Auth::user();
-//            dd($currentUser);
-            Mail::send('mail.checkout-form',array("cart" => $cart->getItems),function ($message){
-                $message->to(Auth::user()->__get("email"),Auth::user()->__get("name"))->subject('Bạn Vừa Nhận Được Đơn Hàng Từ Fashion BigBoss'.Auth::user()->__get("name"));
-            });
+            $currentUser = auth()->user();
+            Mail::to($currentUser)->send(new SendMail());
             event(new OrderCreated($order));
         } catch (\Exception $exception) {
             $exception->getMessage();
         }
     }
 
-
+//function Search
+    public function postSearch(Request $request)
+    {
+        $searchProducts = Product::whereRaw('LOWER("product_name") like ?', '%' . strtolower($request->search) . '%')->get();
+        return view("frontend.search", [
+            "searchProducts" => $searchProducts,
+        ]);
+    }
 }
