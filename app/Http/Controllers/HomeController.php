@@ -82,6 +82,7 @@ class HomeController extends Controller
             //  return Cache::get("home_page");
             return $view;
             Cache::put("home_page",$view,$now->addMinutes(20));
+            ///
         }
         return Cache::get("home_page");
 
