@@ -25,6 +25,7 @@ class ProductController extends Controller
     public function saveProduct(Request $request){
         $request->validate([
             "product_name"=>"required|string|min:2|unique:products",
+            "product_image"=>"string",
             "product_desc"=>"required|string|min:2",
             "price"=>"required|numeric|min:0",
             "qty"=>"required|numeric|min:1",
@@ -72,6 +73,7 @@ class ProductController extends Controller
         $product = Product::findOrFail($id);
         $request->validate([
             "product_name" => "required|min:3|unique:products,product_name,{$id}",
+            "product_image"=>"string",
             "product_desc" => "required",
             "price" => "required|numeric|min:0",
             "qty" => "required|numeric|min:1",

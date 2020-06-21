@@ -60,7 +60,7 @@
                     <label>Price</label>
                     <div class="form-group">
                         <div class="form-line">
-                            <input class="form-control  @error("price") is-invalid @enderror" type="number" name="price" placeholder="Price.."/>
+                            <input class="form-control @error("price") is-invalid @enderror" type="number" name="price" placeholder="Price.."/>
                             @error("price")
                             <span class="error invalid-feedback">{{$message}}</span>
                             @enderror
