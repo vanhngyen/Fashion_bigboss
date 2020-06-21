@@ -191,6 +191,22 @@ class HomeController extends Controller
         ]);
     }
 
+    public function contact(){
+        return view("frontend.contact");
+    }
+
+    public function blog(){
+        return view("frontend.blog");
+    }
+
+    public function about(){
+        return view("frontend.about");
+    }
+
+    public function admin(){
+        return view("admin");
+    }
+
     public function placeOrder(Request $request)
     {
         $request->validate([
@@ -230,8 +246,6 @@ class HomeController extends Controller
             $exception->getMessage();
         }
     }
-
-    //function Search
     public function postSearch(Request $request)
     {
         $searchProducts = Product::whereRaw('LOWER("product_name") like ?', '%' . strtolower($request->search) . '%')->get();
@@ -239,4 +253,5 @@ class HomeController extends Controller
             "searchProducts" => $searchProducts,
         ]);
     }
+
 }
