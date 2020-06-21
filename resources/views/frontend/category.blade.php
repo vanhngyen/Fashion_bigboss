@@ -42,11 +42,11 @@
                     <div class="menu-desktop">
                         <ul class="main-menu">
                             <li>
-                                <a href="{{asset("/home")}}">Home</a>
+                                <a href="/home">Home</a>
                             </li>
 
                             <li class="active-menu">
-                                <a href="/product">Shop</a>
+                                <a href="/category">Shop</a>
                             </li>
 
                             <li class="label1" data-label1="hot">
