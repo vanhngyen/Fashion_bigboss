@@ -14,6 +14,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 use Psy\Util\Str;
 
 
@@ -242,6 +243,10 @@ class HomeController extends Controller
                     "qty" => $item->pivot->__get("qty")
                 ]);
             }
+            $currentUser = Auth::user();
+            Mail::send('mail.checkout-form',["cart" => $cart->getItems,"user" => $currentUser,"order" => $order],function ($message){
+                $message->to(Auth::user()->__get("email"),Auth::user()->__get("name"))->subject('Bạn Vừa Nhận Được Đơn Hàng Từ Fashion BigBoss'.Auth::user()->__get("name"));
+            });
             event(new OrderCreated($order));
 
         } catch (\Exception $exception) {
