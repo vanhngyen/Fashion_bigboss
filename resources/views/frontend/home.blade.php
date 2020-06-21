@@ -641,7 +641,7 @@
             </div>
             <div class="row isotope-grid">
                 @foreach($man as $m)
-                    <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item man">
+                    <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item Man">
                         <!-- Block2 -->
                         <div class="block2">
                             <div class="block2-pic hov-img0">
@@ -678,7 +678,7 @@
                     </div>
                 @endforeach
                 @foreach($woman as $w)
-                    <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item woman">
+                    <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item Woman">
                         <!-- Block2 -->
                         <div class="block2">
                             <div class="block2-pic hov-img0">
@@ -715,7 +715,7 @@
                     </div>
                 @endforeach
                 @foreach($shoes as $s)
-                    <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item shoes">
+                    <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item Shoes">
                         <!-- Block2 -->
                         <div class="block2">
                             <div class="block2-pic hov-img0">
@@ -752,7 +752,7 @@
                     </div>
                 @endforeach
                 @foreach($bag as $b)
-                    <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item bag">
+                    <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item Bag">
                         <!-- Block2 -->
                         <div class="block2">
                             <div class="block2-pic hov-img0">
@@ -789,7 +789,7 @@
                     </div>
                 @endforeach
                 @foreach($watches as $w)
-                    <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item watches">
+                    <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item Watches">
                         <!-- Block2 -->
                         <div class="block2">
                             <div class="block2-pic hov-img0">
