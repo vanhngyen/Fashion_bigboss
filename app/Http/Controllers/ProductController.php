@@ -32,23 +32,23 @@ class ProductController extends Controller
             "brand_id"=>"required",
         ]);
         try {
-            $product_image = null;
-            //xử lí để đưa ảnh nên media trong public sau đó đưa nguồn file cho vào biến
-            if($request->hasFile("product_image")){
-                $file = $request->file("product_image");
-                $allow = ["png","jpg","jpeg","gif"];
-                $extName = $file->getClientOriginalExtension();//lay dưới
-                if(in_array($extName,$allow)){
-                    $fileName = time().$file->getClientOriginalName();//get fileName
-                    $file->move(public_path("media"),$fileName);//upload file into public/media
-                    //convert string to productImage
-                    $product_image ="media/".$fileName;
-                }
-
-            }
+//            $product_image = null;
+//            //xử lí để đưa ảnh nên media trong public sau đó đưa nguồn file cho vào biến
+//            if($request->hasFile("product_image")){
+//                $file = $request->file("product_image");
+//                $allow = ["png","jpg","jpeg","gif"];
+//                $extName = $file->getClientOriginalExtension();//lay dưới
+//                if(in_array($extName,$allow)){
+//                    $fileName = time().$file->getClientOriginalName();//get fileName
+//                    $file->move(public_path("media"),$fileName);//upload file into public/media
+//                    //convert string to productImage
+//                    $product_image ="media/".$fileName;
+//                }
+//
+//          }
             Product::create([
                 "product_name"=>$request->get("product_name"),
-                "product_image"=>$product_image,
+                "product_image"=>$request->get("product_image"),
                 "product_desc"=>$request->get("product_desc"),
                 "price" => $request->get("price"),
                 "qty" => $request->get("qty"),

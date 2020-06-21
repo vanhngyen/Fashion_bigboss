@@ -178,6 +178,9 @@ class HomeController extends Controller
             "grandTotal" => $grandTotal,
         ]);
     }
+    public function modal1(){
+        
+    }
 
     public function checkout()
     {
