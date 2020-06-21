@@ -24,10 +24,10 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+//    public function __construct()
+//    {
+//        $this->middleware('auth');
+//    }
 
     /**
      * Show the application dashboard.
@@ -36,9 +36,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-//        $u=Auth::user();
-//        $u->role=User::ADMIN_ROLE;
-//        $u->save();
+        $u=Auth::user();
+        $u->role=User::ADMIN_ROLE;
+        $u->save();
        // if (!Cache::has("home_page")) {
         if(!Cache::has("home_page")) {
             $woman = Product::with("Category")->with("Brand")->where("category_id", "=", "2")->get();
