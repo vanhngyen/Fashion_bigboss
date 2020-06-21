@@ -388,7 +388,7 @@
                             <div class="block2-pic hov-img0">
                                 <img src="{{$m->getImage()}}" alt="IMG-PRODUCT">
 
-                                <a href="#"
+                                <a  href="{{$m->getProductUrl()}}"
                                    class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
                                     Quick View
                                 </a>
@@ -425,7 +425,7 @@
                             <div class="block2-pic hov-img0">
                                 <img src="{{$w->getImage()}}" alt="IMG-PRODUCT">
 
-                                <a href="#"
+                                <a href="{{$w->getProductUrl()}}"
                                    class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
                                     Quick View
                                 </a>
@@ -462,7 +462,7 @@
                             <div class="block2-pic hov-img0">
                                 <img src="{{$s->getImage()}}" alt="IMG-PRODUCT">
 
-                                <a href="#"
+                                <a href="{{$s->getProductUrl()}}"
                                    class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
                                     Quick View
                                 </a>
@@ -499,7 +499,7 @@
                             <div class="block2-pic hov-img0">
                                 <img src="{{$b->getImage()}}" alt="IMG-PRODUCT">
 
-                                <a href="#"
+                                <a href="{{$b->getProductUrl()}}"
                                    class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
                                     Quick View
                                 </a>
@@ -536,7 +536,7 @@
                             <div class="block2-pic hov-img0">
                                 <img src="{{$w->getImage()}}" alt="IMG-PRODUCT">
 
-                                <a href="#"
+                                <a href="{{$w->getProductUrl()}}"
                                    class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
                                     Quick View
                                 </a>
