@@ -38,7 +38,6 @@ class HomeController extends Controller
     public function index()
     {
 
-        if(!Cache::has("home_page")) {
             $woman = Product::with("Category")->with("Brand")->where("category_id", "=", "2")->get();
             $man = Product::with("Category")->with("Brand")->where("category_id", "=", "1")->get();
             $shoes = Product::with("Category")->with("Brand")->where("category_id", "=", "5")->get();
@@ -64,7 +63,7 @@ class HomeController extends Controller
             $featureds = Product::orderBy("updated_at", "DESC")->limit(8)->get();
             $lastest_1 = Product::orderBy("created_at", "DESC")->limit(3)->get();
             $lastest_2 = Product::orderBy("created_at", "DESC")->offset(3)->limit(3)->get();
-            $view = view('frontend.home', [
+            return view('frontend.home', [
                 "woman" => $woman,
                 "man" => $man,
                 "bag" => $bag,
@@ -75,8 +74,8 @@ class HomeController extends Controller
                 "featureds" => $featureds,
                 "lastest_1" => $lastest_1,
                 "lastest_2" => $lastest_2,
-            ])->render();
-            $now = Carbon::now();
+            ]);
+//            $now = Carbon::now();
             //   Cache::put("home_page",$view,$now->addMinute(20));
             //  }
             //  return Cache::get("home_page");
@@ -163,13 +162,6 @@ class HomeController extends Controller
         }
         session(["my_cart" => $myCart]);
         return redirect()->to("/shopping-cart");
-    }
-    public function postSearch(Request $request)
-    {
-        $searchProducts = Product::whereRaw('LOWER("product_name") like ?','%'.strtolower($request->search).'%')->get();
-        return view("frontend.search", [
-            "searchProducts" => $searchProducts,
-        ]);
     }
 
     public function shoppingCart()

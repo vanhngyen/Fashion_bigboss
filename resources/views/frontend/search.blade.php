@@ -158,6 +158,11 @@
                     <button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 how-active1" data-filter="*">
                         All Products
                     </button>
+                    @foreach($category as $c)
+                        <button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".{{$c->__get("category_name")}}">
+                            {{$c->__get("category_name")}}
+                        </button>
+                    @endforeach
                 </div>
 
                 <div class="flex-w flex-c-m m-tb-10">
@@ -376,7 +381,7 @@
             </div>
 
             <div class="row isotope-grid">
-                @foreach($searchProducts as $m)
+                @foreach($man as $m)
                     <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item man">
                         <!-- Block2 -->
                         <div class="block2">
@@ -413,154 +418,154 @@
                         </div>
                     </div>
                 @endforeach
-{{--                @foreach($woman as $w)--}}
-{{--                    <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item woman">--}}
-{{--                        <!-- Block2 -->--}}
-{{--                        <div class="block2">--}}
-{{--                            <div class="block2-pic hov-img0">--}}
-{{--                                <img src="{{$w->getImage()}}" alt="IMG-PRODUCT">--}}
+                @foreach($woman as $w)
+                    <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item woman">
+                        <!-- Block2 -->
+                        <div class="block2">
+                            <div class="block2-pic hov-img0">
+                                <img src="{{$w->getImage()}}" alt="IMG-PRODUCT">
 
-{{--                                <a href="#"--}}
-{{--                                   class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">--}}
-{{--                                    Quick View--}}
-{{--                                </a>--}}
-{{--                            </div>--}}
+                                <a href="#"
+                                   class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+                                    Quick View
+                                </a>
+                            </div>
 
-{{--                            <div class="block2-txt flex-w flex-t p-t-14">--}}
-{{--                                <div class="block2-txt-child1 flex-col-l ">--}}
-{{--                                    <a href="product-detail.html"--}}
-{{--                                       class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">--}}
-{{--                                        {{$w->__get("product_name")}}--}}
-{{--                                    </a>--}}
+                            <div class="block2-txt flex-w flex-t p-t-14">
+                                <div class="block2-txt-child1 flex-col-l ">
+                                    <a href="product-detail.html"
+                                       class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+                                        {{$w->__get("product_name")}}
+                                    </a>
 
-{{--                                    <span class="stext-105 cl3">--}}
-{{--									{{$w->getPrice()}}--}}
-{{--								</span>--}}
-{{--                                </div>--}}
+                                    <span class="stext-105 cl3">
+									{{$w->getPrice()}}
+								</span>
+                                </div>
 
-{{--                                <div class="block2-txt-child2 flex-r p-t-3">--}}
-{{--                                    <a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">--}}
-{{--                                        <img class="icon-heart1 dis-block trans-04" src="{{asset("images/icons/icon-heart-01.png")}}"--}}
-{{--                                             alt="ICON">--}}
-{{--                                        <img class="icon-heart2 dis-block trans-04 ab-t-l"--}}
-{{--                                             src="{{asset("images/icons/icon-heart-02.png")}}" alt="ICON">--}}
-{{--                                    </a>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                @endforeach--}}
-{{--                @foreach($shoes as $s)--}}
-{{--                    <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item shoes">--}}
-{{--                        <!-- Block2 -->--}}
-{{--                        <div class="block2">--}}
-{{--                            <div class="block2-pic hov-img0">--}}
-{{--                                <img src="{{$s->getImage()}}" alt="IMG-PRODUCT">--}}
+                                <div class="block2-txt-child2 flex-r p-t-3">
+                                    <a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
+                                        <img class="icon-heart1 dis-block trans-04" src="{{asset("images/icons/icon-heart-01.png")}}"
+                                             alt="ICON">
+                                        <img class="icon-heart2 dis-block trans-04 ab-t-l"
+                                             src="{{asset("images/icons/icon-heart-02.png")}}" alt="ICON">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+                @foreach($shoes as $s)
+                    <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item shoes">
+                        <!-- Block2 -->
+                        <div class="block2">
+                            <div class="block2-pic hov-img0">
+                                <img src="{{$s->getImage()}}" alt="IMG-PRODUCT">
 
-{{--                                <a href="#"--}}
-{{--                                   class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">--}}
-{{--                                    Quick View--}}
-{{--                                </a>--}}
-{{--                            </div>--}}
+                                <a href="#"
+                                   class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+                                    Quick View
+                                </a>
+                            </div>
 
-{{--                            <div class="block2-txt flex-w flex-t p-t-14">--}}
-{{--                                <div class="block2-txt-child1 flex-col-l ">--}}
-{{--                                    <a href="product-detail.html"--}}
-{{--                                       class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">--}}
-{{--                                        {{$s->__get("product_name")}}--}}
-{{--                                    </a>--}}
+                            <div class="block2-txt flex-w flex-t p-t-14">
+                                <div class="block2-txt-child1 flex-col-l ">
+                                    <a href="product-detail.html"
+                                       class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+                                        {{$s->__get("product_name")}}
+                                    </a>
 
-{{--                                    <span class="stext-105 cl3">--}}
-{{--									{{$s->getPrice()}}--}}
-{{--								</span>--}}
-{{--                                </div>--}}
+                                    <span class="stext-105 cl3">
+									{{$s->getPrice()}}
+								</span>
+                                </div>
 
-{{--                                <div class="block2-txt-child2 flex-r p-t-3">--}}
-{{--                                    <a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">--}}
-{{--                                        <img class="icon-heart1 dis-block trans-04" src="{{asset("images/icons/icon-heart-01.png")}}"--}}
-{{--                                             alt="ICON">--}}
-{{--                                        <img class="icon-heart2 dis-block trans-04 ab-t-l"--}}
-{{--                                             src="{{asset("images/icons/icon-heart-02.png")}}" alt="ICON">--}}
-{{--                                    </a>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                @endforeach--}}
-{{--                @foreach($bag as $b)--}}
-{{--                    <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item bag">--}}
-{{--                        <!-- Block2 -->--}}
-{{--                        <div class="block2">--}}
-{{--                            <div class="block2-pic hov-img0">--}}
-{{--                                <img src="{{$b->getImage()}}" alt="IMG-PRODUCT">--}}
+                                <div class="block2-txt-child2 flex-r p-t-3">
+                                    <a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
+                                        <img class="icon-heart1 dis-block trans-04" src="{{asset("images/icons/icon-heart-01.png")}}"
+                                             alt="ICON">
+                                        <img class="icon-heart2 dis-block trans-04 ab-t-l"
+                                             src="{{asset("images/icons/icon-heart-02.png")}}" alt="ICON">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+                @foreach($bag as $b)
+                    <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item bag">
+                        <!-- Block2 -->
+                        <div class="block2">
+                            <div class="block2-pic hov-img0">
+                                <img src="{{$b->getImage()}}" alt="IMG-PRODUCT">
 
-{{--                                <a href="#"--}}
-{{--                                   class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">--}}
-{{--                                    Quick View--}}
-{{--                                </a>--}}
-{{--                            </div>--}}
+                                <a href="#"
+                                   class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+                                    Quick View
+                                </a>
+                            </div>
 
-{{--                            <div class="block2-txt flex-w flex-t p-t-14">--}}
-{{--                                <div class="block2-txt-child1 flex-col-l ">--}}
-{{--                                    <a href="product-detail.html"--}}
-{{--                                       class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">--}}
-{{--                                        {{$b->__get("product_name")}}--}}
-{{--                                    </a>--}}
+                            <div class="block2-txt flex-w flex-t p-t-14">
+                                <div class="block2-txt-child1 flex-col-l ">
+                                    <a href="product-detail.html"
+                                       class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+                                        {{$b->__get("product_name")}}
+                                    </a>
 
-{{--                                    <span class="stext-105 cl3">--}}
-{{--									{{$b->getPrice()}}--}}
-{{--								</span>--}}
-{{--                                </div>--}}
+                                    <span class="stext-105 cl3">
+									{{$b->getPrice()}}
+								</span>
+                                </div>
 
-{{--                                <div class="block2-txt-child2 flex-r p-t-3">--}}
-{{--                                    <a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">--}}
-{{--                                        <img class="icon-heart1 dis-block trans-04" src="{{asset("images/icons/icon-heart-01.png")}}"--}}
-{{--                                             alt="ICON">--}}
-{{--                                        <img class="icon-heart2 dis-block trans-04 ab-t-l"--}}
-{{--                                             src="{{asset("images/icons/icon-heart-02.png")}}" alt="ICON">--}}
-{{--                                    </a>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                @endforeach--}}
-{{--                @foreach($watches as $w)--}}
-{{--                    <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item watches">--}}
-{{--                        <!-- Block2 -->--}}
-{{--                        <div class="block2">--}}
-{{--                            <div class="block2-pic hov-img0">--}}
-{{--                                <img src="{{$w->getImage()}}" alt="IMG-PRODUCT">--}}
+                                <div class="block2-txt-child2 flex-r p-t-3">
+                                    <a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
+                                        <img class="icon-heart1 dis-block trans-04" src="{{asset("images/icons/icon-heart-01.png")}}"
+                                             alt="ICON">
+                                        <img class="icon-heart2 dis-block trans-04 ab-t-l"
+                                             src="{{asset("images/icons/icon-heart-02.png")}}" alt="ICON">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+                @foreach($watches as $w)
+                    <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item watches">
+                        <!-- Block2 -->
+                        <div class="block2">
+                            <div class="block2-pic hov-img0">
+                                <img src="{{$w->getImage()}}" alt="IMG-PRODUCT">
 
-{{--                                <a href="#"--}}
-{{--                                   class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">--}}
-{{--                                    Quick View--}}
-{{--                                </a>--}}
-{{--                            </div>--}}
+                                <a href="#"
+                                   class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+                                    Quick View
+                                </a>
+                            </div>
 
-{{--                            <div class="block2-txt flex-w flex-t p-t-14">--}}
-{{--                                <div class="block2-txt-child1 flex-col-l ">--}}
-{{--                                    <a href="product-detail.html"--}}
-{{--                                       class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">--}}
-{{--                                        {{$w->__get("product_name")}}--}}
-{{--                                    </a>--}}
+                            <div class="block2-txt flex-w flex-t p-t-14">
+                                <div class="block2-txt-child1 flex-col-l ">
+                                    <a href="product-detail.html"
+                                       class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+                                        {{$w->__get("product_name")}}
+                                    </a>
 
-{{--                                    <span class="stext-105 cl3">--}}
-{{--									{{$w->getPrice()}}--}}
-{{--								</span>--}}
-{{--                                </div>--}}
+                                    <span class="stext-105 cl3">
+									{{$w->getPrice()}}
+								</span>
+                                </div>
 
-{{--                                <div class="block2-txt-child2 flex-r p-t-3">--}}
-{{--                                    <a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">--}}
-{{--                                        <img class="icon-heart1 dis-block trans-04" src="{{asset("images/icons/icon-heart-01.png")}}"--}}
-{{--                                             alt="ICON">--}}
-{{--                                        <img class="icon-heart2 dis-block trans-04 ab-t-l"--}}
-{{--                                             src="{{asset("images/icons/icon-heart-02.png")}}" alt="ICON">--}}
-{{--                                    </a>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                @endforeach--}}
+                                <div class="block2-txt-child2 flex-r p-t-3">
+                                    <a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
+                                        <img class="icon-heart1 dis-block trans-04" src="{{asset("images/icons/icon-heart-01.png")}}"
+                                             alt="ICON">
+                                        <img class="icon-heart2 dis-block trans-04 ab-t-l"
+                                             src="{{asset("images/icons/icon-heart-02.png")}}" alt="ICON">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
 
             </div>
 

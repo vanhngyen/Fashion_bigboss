@@ -3,7 +3,7 @@ Route::get('/',"WebController@index");
 Route::get('/home','HomeController@index')->name('home');
 Route::get("/category/{category:slug}","HomeController@category");
 Route::get("/product/{product:slug}","HomeController@product");
-Route::get("/category","HomeController@product");
+Route::get("/category","HomeController@category");
 Route::post("/cart/add/{product}","HomeController@addToCart");
 Route::get("/shopping-cart","HomeController@shoppingCart");
 Route::get("/checkout","HomeController@checkout")->middleware("auth");
