@@ -2,12 +2,14 @@
 
 namespace App\Mail;
 
+use App\Cart;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Support\Facades\Auth;
 
-class MailToUserAfterOrderCreate extends Mailable
+class SendMail extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -28,6 +30,14 @@ class MailToUserAfterOrderCreate extends Mailable
      */
     public function build()
     {
-        return $this->view('view.name');
+        $currentUser = auth()->user();
+        $cart = Cart::where("user_id", Auth::id())
+            ->where("is_checkout", true)
+            ->with("getItems")
+            ->firstOrFail();
+        return $this->view('mail.checkout-form',[
+            "cart" => $cart->getItems,
+            "user" => $currentUser,
+        ]);
     }
 }

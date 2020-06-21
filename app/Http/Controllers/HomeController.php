@@ -6,6 +6,7 @@ use App\Cart;
 use App\Brand;
 use App\Category;
 use App\Events\OrderCreated;
+use App\Mail\SendMail;
 use App\Order;
 use App\Product;
 use App\User;
@@ -222,10 +223,8 @@ class HomeController extends Controller
                     "qty" => $item->pivot->__get("qty")
                 ]);
             }
-            $currentUser = Auth::user();
-            Mail::send('mail.checkout-form',array("cart" => $cart->getItems),function ($message){
-                $message->to(Auth::user()->__get("email"),Auth::user()->__get("name"))->subject('Bạn Vừa Nhận Được Đơn Hàng Từ Fashion BigBoss'.Auth::user()->__get("name"));
-            });
+            $currentUser = auth()->user();
+            Mail::to($currentUser)->send(new SendMail());
             event(new OrderCreated($order));
         } catch (\Exception $exception) {
             $exception->getMessage();

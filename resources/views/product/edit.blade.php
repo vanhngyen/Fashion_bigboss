@@ -8,7 +8,7 @@
             <div class="card">
                 <div class="header">
                     <h2>
-                        NEW PRODUCT
+                        EDIT PRODUCT
                     </h2>
                     <ul class="header-dropdown m-r--5">
                         <li class="dropdown">
@@ -35,7 +35,7 @@
                     <label>Product Name</label>
                     <div class="form-group">
                         <div class="form-line">
-                            <input class="form-control value="{{$product->__get("product_name")}}" @error("product_name") is-invalid @enderror" type="text" name="product_name" placeholder="Enter Name"/>
+                            <input type="text" class="form-control value="{{$product->__get("product_name")}}" @error("product_name") is-invalid @enderror"  name="product_name" placeholder="Enter Name"/>
                             @error("product_name")
                             <span class="error invalid-feedback">{{$message}}</span>
                             @enderror
