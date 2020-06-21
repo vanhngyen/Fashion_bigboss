@@ -14,7 +14,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Mail;
 use Psy\Util\Str;
 
 
@@ -75,11 +74,6 @@ class HomeController extends Controller
                 "lastest_1" => $lastest_1,
                 "lastest_2" => $lastest_2,
             ]);
-        $now = Carbon::now();
-        Cache::put("home_page",$view,$now->addMinutes(20));
-        //}
-        return Cache::get("home_page");
-
     }
 
     public function category(Category $category)
@@ -197,11 +191,11 @@ class HomeController extends Controller
 
     public function placeOrder(Request $request)
     {
-        $request->validate([
-            "username" => "required",
-            "address" => "required",
-            "telephone" => "required",
-        ]);
+//        $request->validate([
+//            "username" => "required",
+//            "address" => "required",
+//            "telephone" => "required",
+//        ]);
         $cart = Cart::where("user_id", Auth::id())
             ->where("is_checkout", true)
             ->with("getItems")
@@ -233,7 +227,7 @@ class HomeController extends Controller
             Mail::send('mail.checkout-form',array("cart" => $cart->getItems),function ($message){
                 $message->to(Auth::user()->__get("email"),Auth::user()->__get("name"))->subject('Bạn Vừa Nhận Được Đơn Hàng Từ Fashion BigBoss'.Auth::user()->__get("name"));
             });
-            event(new OrderCreated($order));
+//            event(new OrderCreated($order));
         } catch (\Exception $exception) {
             $exception->getMessage();
         }
