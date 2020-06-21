@@ -210,8 +210,10 @@
                     <img src={{asset("images/icons/icon-close2.png")}} alt="CLOSE">
                 </button>
 
-                <form class="wrap-search-header flex-w p-l-15">
-                    <button class="flex-c-m trans-04">
+                <form action="/search" method="post" class="wrap-search-header flex-w p-l-15">
+                    @method("POST")
+                    @csrf
+                    <button type="submit" class="flex-c-m trans-04">
                         <i class="zmdi zmdi-search"></i>
                     </button>
                     <input class="plh3" type="text" name="search" placeholder="Search...">
