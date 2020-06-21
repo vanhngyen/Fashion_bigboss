@@ -244,14 +244,13 @@ class HomeController extends Controller
                 ]);
             }
             $currentUser = Auth::user();
-            Mail::send('mail.checkout-form',["cart" => $cart->getItems,"user" => $currentUser,"order" => $order],function ($message){
+//            dd($currentUser);
+            Mail::send('mail.checkout-form',array("cart" => $cart->getItems),function ($message){
                 $message->to(Auth::user()->__get("email"),Auth::user()->__get("name"))->subject('Bạn Vừa Nhận Được Đơn Hàng Từ Fashion BigBoss'.Auth::user()->__get("name"));
             });
             event(new OrderCreated($order));
-
         } catch (\Exception $exception) {
-
+            $exception->getMessage();
         }
-      return redirect()->to("/");
     }
 }
