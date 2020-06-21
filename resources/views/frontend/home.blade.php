@@ -47,7 +47,7 @@
                             </li>
 
                             <li>
-                                <a href="/">Shop</a>
+                                <a href="/category">Shop</a>
                             </li>
 
                             <li class="label1" data-label1="hot">
@@ -57,7 +57,7 @@
                             <li>
                                 <a href="/blog">Blog</a>
                             </li>
-
+{{--kdls--}}
                             <li>
                                 <a href="/about">About</a>
                             </li>
