@@ -51,7 +51,7 @@
                             </li>
 
                             <li class="label1" data-label1="hot">
-                                <a href="/feature">Features</a>
+                                <a href="/shopping-cart">Features</a>
                             </li>
 
                             <li>
@@ -90,9 +90,11 @@
                             <i class="zmdi zmdi-search"></i>
                         </div>
 
-                        <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart"
+                        <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti"
                              data-notify="{{$count_item}}">
-                            <i class="zmdi zmdi-shopping-cart"></i>
+                           <a href="/shopping-cart">
+                               <i class="zmdi zmdi-shopping-cart"></i>
+                           </a>
                         </div>
 
                         <a href="#"
@@ -186,7 +188,7 @@
                 </li>
 
                 <li>
-                    <a href="shoping-cart.html" class="label1 rs1" data-label1="hot">Features</a>
+                    <a href="/shopping-cart" class="label1 rs1" data-label1="hot">Features</a>
                 </li>
 
                 <li>
@@ -649,7 +651,7 @@
 
                                 <a href="javascript:void(0);" onclick="addToCart({{$m->__get("id")}});"
                                    class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-                                    Quick View
+                                   add to cart
                                 </a>
                             </div>
 
@@ -686,7 +688,7 @@
 
                                 <a href="javascript:void(0);" onclick="addToCart({{$w->__get("id")}});"
                                    class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-                                    Quick View
+                                  add to cart
                                 </a>
                             </div>
 
@@ -723,7 +725,7 @@
 
                                 <a href="javascript:void(0);" onclick="addToCart({{$s->__get("id")}});"
                                    class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-                                    Quick View
+                                  add to cart
                                 </a>
                             </div>
 
@@ -759,7 +761,7 @@
                                 <img src="{{$b->getImage()}}" alt="IMG-PRODUCT">
 
                                 <a href="javascript:void(0);" onclick="addToCart({{$b->__get("id")}});" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-                                    Quick View
+                                add to cart
                                 </a>
                             </div>
 
@@ -796,7 +798,7 @@
 
                                 <a href="javascript:void(0);" onclick="addToCart({{$w->__get("id")}});"
                                    class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-                                    Quick View
+                                  add to cart
                                 </a>
                             </div>
 

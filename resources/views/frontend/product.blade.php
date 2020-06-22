@@ -49,7 +49,7 @@
                             </li>
 
                             <li class="label1" data-label1="hot">
-                                <a href="/features">Features</a>
+                                <a href="/shopping-cart">Features</a>
                             </li>
 
                             <li>
@@ -90,7 +90,10 @@
 
                         <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart"
                              data-notify="{{$count_item}}">
-                            <i class="zmdi zmdi-shopping-cart"></i>
+                            <a href="/shopping-cart">
+                                <i class="zmdi zmdi-shopping-cart"></i>
+                            </a>
+
                         </div>
 
                         <a href="#" class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti"
@@ -709,7 +712,7 @@
                             <div class="block2-pic hov-img0">
                                 <img src="images/product-02.jpg" alt="IMG-PRODUCT">
 
-                                <a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+                                <a href="" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
                                     Quick View
                                 </a>
                             </div>
